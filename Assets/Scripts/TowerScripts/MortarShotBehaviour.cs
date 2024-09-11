@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MortarShotBehaviour : MonoBehaviour
 {
-    [SerializeField]
-    private SphereCollider _seeEnemies;
+    //[SerializeField]
+    //private SphereCollider _seeEnemies;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -17,7 +17,6 @@ public class MortarShotBehaviour : MonoBehaviour
             {
                 if(hitCollider.CompareTag("Enemy"))
                 {
-                    Debug.Log(hitCollider.name);
                     hitCollider.GetComponent<Health>().ReceiveDamage(100);
                 }
                 //hitCollider.SendMessage("AddDamage");

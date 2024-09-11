@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 3803136932576291540}
   - component: {fileID: 931459314598881762}
   - component: {fileID: 6297577243008242317}
-  - component: {fileID: 1875413257987165536}
   m_Layer: 0
   m_Name: MortarShot
   m_TagString: Shot
@@ -147,25 +146,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64104fa8215a16346bf26763fa3df988, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _seeEnemies: {fileID: 1875413257987165536}
---- !u!135 &1875413257987165536
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8105916988561046584}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Radius: 8.55
-  m_Center: {x: 0, y: 0, z: 0}
