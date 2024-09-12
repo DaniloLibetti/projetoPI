@@ -36,9 +36,8 @@ public class AntiAirHead : MonoBehaviour
             AntiAirMissleBehaviour behaviour = missle.GetComponent<AntiAirMissleBehaviour>();
             behaviour._lockedTarget = _enemyLocked;
             behaviour._behaviour = _behaviour;
+            //Invoke("Shoot", 2); //esta usando timer manual no AntiAirBehaviour
+
         }
-        else
-            return;
-        Invoke("Shoot", 1.5f);
     }
 }

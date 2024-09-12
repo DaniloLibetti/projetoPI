@@ -7,8 +7,10 @@ public class EnemyMortarTest : MonoBehaviour
     [SerializeField]
     private CharacterController _mobController;
     // Update is called once per frame
+    public Vector3 velocity;
     void Update()
     {
-        _mobController.Move(new Vector3(-1, 0, 0) * Time.deltaTime);
+        velocity = new Vector3(-1, 0, 0) * 5;
+        _mobController.Move(velocity * Time.deltaTime);
     }
 }

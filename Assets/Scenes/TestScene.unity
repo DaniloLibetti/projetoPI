@@ -179,6 +179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mobController: {fileID: 126057765}
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!1001 &134596450
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -285,6 +286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mobController: {fileID: 172645677}
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!143 &172645677
 CharacterController:
   m_ObjectHideFlags: 0
@@ -336,6 +338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mobController: {fileID: 213898881}
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!143 &213898881
 CharacterController:
   m_ObjectHideFlags: 0
@@ -362,19 +365,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &213898886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 213898878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c28421b59419d746bfee23478e02316, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _health: 100
 --- !u!1 &231866041
 GameObject:
   m_ObjectHideFlags: 0
@@ -687,6 +677,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mobController: {fileID: 517538428}
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!143 &517538428
 CharacterController:
   m_ObjectHideFlags: 0
@@ -713,19 +704,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &517538433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 517538425}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c28421b59419d746bfee23478e02316, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _health: 100
 --- !u!1 &563844198 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3709516989972187314, guid: 78d4bb81246aadf43abe61b0e32ca84f,
@@ -777,6 +755,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mobController: {fileID: 563844200}
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!1 &631976904
 GameObject:
   m_ObjectHideFlags: 0
@@ -908,6 +887,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mobController: {fileID: 648121873}
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!143 &648121873
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1250,10 +1230,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 823745094}
-    - targetCorrespondingSourceObject: {fileID: 3709516989972187314, guid: 78d4bb81246aadf43abe61b0e32ca84f,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 823745100}
   m_SourcePrefab: {fileID: 100100000, guid: 78d4bb81246aadf43abe61b0e32ca84f, type: 3}
 --- !u!1001 &817443288
 PrefabInstance:
@@ -1361,6 +1337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mobController: {fileID: 823745095}
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!143 &823745095
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1387,19 +1364,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &823745100
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 823745092}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c28421b59419d746bfee23478e02316, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _health: 100
 --- !u!1001 &906529499
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1480,10 +1444,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1367203356}
-    - targetCorrespondingSourceObject: {fileID: 3709516989972187314, guid: 78d4bb81246aadf43abe61b0e32ca84f,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1367203362}
   m_SourcePrefab: {fileID: 100100000, guid: 78d4bb81246aadf43abe61b0e32ca84f, type: 3}
 --- !u!1001 &912007034
 PrefabInstance:
@@ -1800,10 +1760,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1130853953}
-    - targetCorrespondingSourceObject: {fileID: 3709516989972187314, guid: 78d4bb81246aadf43abe61b0e32ca84f,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1130853959}
   m_SourcePrefab: {fileID: 100100000, guid: 78d4bb81246aadf43abe61b0e32ca84f, type: 3}
 --- !u!1 &1116123238
 GameObject:
@@ -1948,6 +1904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mobController: {fileID: 1130853954}
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!143 &1130853954
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1974,19 +1931,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1130853959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1130853951}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c28421b59419d746bfee23478e02316, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _health: 100
 --- !u!1 &1160413729
 GameObject:
   m_ObjectHideFlags: 0
@@ -2310,6 +2254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mobController: {fileID: 1281717148}
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!1 &1321215329
 GameObject:
   m_ObjectHideFlags: 0
@@ -2546,6 +2491,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mobController: {fileID: 1367203357}
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!143 &1367203357
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2572,19 +2518,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1367203362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1367203354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c28421b59419d746bfee23478e02316, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _health: 100
 --- !u!1001 &1441769922
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2665,10 +2598,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 517538427}
-    - targetCorrespondingSourceObject: {fileID: 3709516989972187314, guid: 78d4bb81246aadf43abe61b0e32ca84f,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 517538433}
   m_SourcePrefab: {fileID: 100100000, guid: 78d4bb81246aadf43abe61b0e32ca84f, type: 3}
 --- !u!1 &1489788594
 GameObject:
@@ -2902,10 +2831,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 213898880}
-    - targetCorrespondingSourceObject: {fileID: 3709516989972187314, guid: 78d4bb81246aadf43abe61b0e32ca84f,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 213898886}
   m_SourcePrefab: {fileID: 100100000, guid: 78d4bb81246aadf43abe61b0e32ca84f, type: 3}
 --- !u!1001 &1583260783
 PrefabInstance:
@@ -3055,10 +2980,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1724462276}
-    - targetCorrespondingSourceObject: {fileID: 3709516989972187314, guid: 78d4bb81246aadf43abe61b0e32ca84f,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1724462282}
   m_SourcePrefab: {fileID: 100100000, guid: 78d4bb81246aadf43abe61b0e32ca84f, type: 3}
 --- !u!1 &1724462274 stripped
 GameObject:
@@ -3085,6 +3006,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mobController: {fileID: 1724462277}
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!143 &1724462277
 CharacterController:
   m_ObjectHideFlags: 0
@@ -3111,19 +3033,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1724462282
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1724462274}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c28421b59419d746bfee23478e02316, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _health: 100
 --- !u!1 &1742726878
 GameObject:
   m_ObjectHideFlags: 0
@@ -3373,6 +3282,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mobController: {fileID: 1910065379}
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!143 &1910065379
 CharacterController:
   m_ObjectHideFlags: 0
@@ -3544,6 +3454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mobController: {fileID: 1973734605}
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!143 &1973734605
 CharacterController:
   m_ObjectHideFlags: 0
@@ -3621,6 +3532,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mobController: {fileID: 2005614698}
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!1001 &2012253490
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3741,8 +3653,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 70, y: 35, z: 35}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 37.799374, y: 18.696575, z: 35}
+  m_Center: {x: 16.100313, y: 8.151739, z: 0}
 --- !u!23 &2094398793
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3823,6 +3735,7 @@ MonoBehaviour:
   _enemy: []
   _lockedEnemy: {fileID: 0}
   _head: {fileID: 709489267}
+  firerate: 2
 --- !u!1001 &2102528063
 PrefabInstance:
   m_ObjectHideFlags: 0
