@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class TurretBehaviour : MonoBehaviour
@@ -13,6 +14,8 @@ public class TurretBehaviour : MonoBehaviour
     private float _rotationSpeed = 5f;
     [SerializeField]
     private float _maxShootDistance = 10f;
+    [SerializeField]
+    private BoxCollider _shootDistance;
 
     [SerializeField]
     private Transform _turretPivot;
@@ -28,6 +31,7 @@ public class TurretBehaviour : MonoBehaviour
     private float _shootCooldown;
     private GameObject _activeTarget;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,24 +43,24 @@ public class TurretBehaviour : MonoBehaviour
     {
         //Olha pro proximo alvo
         LookAtTarget();
-
-        if(_shootCooldown <= 0)
-        {
-            _shootCooldown = _fireRate;
-            if(_activeTarget != null)
+            if (_shootCooldown <= 0)
             {
-                Shoot();
+                _shootCooldown = _fireRate;
+                if (_activeTarget != null)
+                {
+                    Shoot();
+                }
             }
-        }
-        else
-        {
-            _shootCooldown -= Time.deltaTime;
-        }
+            else
+            {
+                _shootCooldown -= Time.deltaTime;
+            }
+        
     }
 
     private GameObject GetNextTarget()
     {
-        if(_targets.Count > 0)
+        if (_targets.Count > 0)
         {
             GameObject target = _targets[0];
             _targets.Remove(target);
@@ -65,6 +69,8 @@ public class TurretBehaviour : MonoBehaviour
 
         return null;
     }
+
+
 
     private void LookAtTarget()
     {
@@ -91,6 +97,7 @@ public class TurretBehaviour : MonoBehaviour
         _turretPivot.rotation = Quaternion.Euler(Vector3.Scale(targetRotation, _turretPivot.up));
 
     }
+
 
     private void Shoot()
     {
