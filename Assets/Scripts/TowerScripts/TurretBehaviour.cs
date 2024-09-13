@@ -24,80 +24,68 @@ public class TurretBehaviour : MonoBehaviour
     [SerializeField]
     private ParticleSystem _shootEffect;
 
-    [Header("Targets")]
-    [SerializeField]
-    private List<GameObject> _targets;
 
     private float _shootCooldown;
     private GameObject _activeTarget;
 
 
+    public List<Transform> _enemy = new List<Transform>();
+    [SerializeField]
+    private Transform _lockedEnemy;
+    private float _minDist = Mathf.Infinity;
+    float timer = 0;
+    [SerializeField]
+    float firerate = 2f;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        _shootCooldown = _fireRate;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Olha pro proximo alvo
-        LookAtTarget();
-            if (_shootCooldown <= 0)
+        Debug.DrawRay(_firePoint.position, _firePoint.TransformDirection(Vector3.forward), Color.red);
+
+            timer += Time.deltaTime;
+            if (timer > firerate)
             {
-                _shootCooldown = _fireRate;
-                if (_activeTarget != null)
-                {
-                    Shoot();
-                }
-            }
-            else
-            {
-                _shootCooldown -= Time.deltaTime;
+                Shoot();
+                timer %= firerate;
             }
         
+
     }
 
-    private GameObject GetNextTarget()
+    private void OnTriggerEnter(Collider other)
     {
-        if (_targets.Count > 0)
+        if (other.CompareTag("GroundEnemy"))
         {
-            GameObject target = _targets[0];
-            _targets.Remove(target);
-            return target;
+            _enemy.Add(other.transform);
+            SetTarget();
         }
-
-        return null;
     }
 
-
-
-    private void LookAtTarget()
+    public void SetTarget()
     {
-        //Achar o proximo alvo
-        if(_activeTarget == null || !_activeTarget.activeSelf)
+        if (_lockedEnemy == null || !_lockedEnemy.gameObject.activeSelf)
         {
-            _activeTarget = GetNextTarget();
+            foreach (Transform t in _enemy)
+            {
+                float dist = Vector3.Distance(t.position, transform.position);
+                if (dist < _minDist)
+                {
+                    Debug.Log(t.name);
+                    _lockedEnemy = t;
+                    _minDist = dist;
+                    timer = firerate;//vai começar atirando, ao inves de esperar (firerate) segundos pra começar a atirar
+                }
+            }
+            //_head.Shoot();
         }
-
-        //Caso nao tenha mais alvos
-        if(_activeTarget == null)
-        {
-            return;
-        }
-
-        //Pegar a direção
-        Vector3 direction = _activeTarget.transform.position - _turretPivot.position;
-        //Pegar a rotação
-        Quaternion lookRotation = Quaternion.LookRotation(direction);
-
-        //Rotacao suave
-        Vector3 targetRotation = Quaternion.Slerp(_turretPivot.rotation, lookRotation, _rotationSpeed * Time.deltaTime).eulerAngles;
-        //rotacionar só no eixo y
-        _turretPivot.rotation = Quaternion.Euler(Vector3.Scale(targetRotation, _turretPivot.up));
-
     }
-
 
     private void Shoot()
     {
@@ -109,6 +97,7 @@ public class TurretBehaviour : MonoBehaviour
         {
             Health health = hitInfo.transform.gameObject.GetComponent<Health>();
             
+            
             if(health == null)
             {
                 Debug.LogWarning("acertou algo sem health. . . . . . .");
@@ -119,6 +108,19 @@ public class TurretBehaviour : MonoBehaviour
             }
         }
 
+       
+
+    }
+
+    public void RemoveInactive()
+    {
+        if (!_lockedEnemy.gameObject.activeSelf)
+        {
+            _enemy.Remove(_lockedEnemy);
+            _lockedEnemy = null;
+            _minDist = Mathf.Infinity;
+        }
+        SetTarget();
     }
 
 }
