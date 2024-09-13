@@ -11,8 +11,6 @@ public class TurretBehaviour : MonoBehaviour
     [SerializeField]
     private float _damage = 20f;
     [SerializeField]
-    private float _rotationSpeed = 5f;
-    [SerializeField]
     private float _maxShootDistance = 10f;
     [SerializeField]
     private BoxCollider _shootDistance;
@@ -49,13 +47,19 @@ public class TurretBehaviour : MonoBehaviour
     {
         Debug.DrawRay(_firePoint.position, _firePoint.TransformDirection(Vector3.forward), Color.red);
 
-            timer += Time.deltaTime;
-            if (timer > firerate)
+        if(_shootCooldown <= 0)
+        {
+            _shootCooldown = _fireRate;
+            if(_lockedEnemy != null)
             {
                 Shoot();
-                timer %= firerate;
             }
-        
+        }
+        else
+        {
+            _shootCooldown -= Time.deltaTime;
+        }
+
 
     }
 
