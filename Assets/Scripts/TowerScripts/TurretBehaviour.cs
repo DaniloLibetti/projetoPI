@@ -7,7 +7,7 @@ public class TurretBehaviour : MonoBehaviour
 {
     [Header("Properties")]
     [SerializeField]
-    private float _fireRate = 0.05f;
+    private float _fireRate = 1f;
     [SerializeField]
     private float _damage = 20f;
     [SerializeField]
@@ -39,27 +39,21 @@ public class TurretBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        _shootCooldown = _fireRate;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.DrawRay(_firePoint.position, _firePoint.TransformDirection(Vector3.forward), Color.red);
+        
 
-        if(_shootCooldown <= 0)
+        if(_shootCooldown <= 0 && _lockedEnemy != null)
         {
             _shootCooldown = _fireRate;
-            if(_lockedEnemy != null)
-            {
-                Shoot();
-            }
-        }
-        else
-        {
-            _shootCooldown -= Time.deltaTime;
+            Shoot();
         }
 
+          _shootCooldown -= Time.deltaTime;
 
     }
 
@@ -84,7 +78,7 @@ public class TurretBehaviour : MonoBehaviour
                     Debug.Log(t.name);
                     _lockedEnemy = t;
                     _minDist = dist;
-                    timer = firerate;//vai começar atirando, ao inves de esperar (firerate) segundos pra começar a atirar
+                   
                 }
             }
             //_head.Shoot();
@@ -96,8 +90,9 @@ public class TurretBehaviour : MonoBehaviour
         _shootEffect.Play();
 
         Ray shootRay = new Ray(_firePoint.position, _firePoint.forward);
+        Debug.DrawRay(_firePoint.position, _firePoint.TransformDirection(Vector3.forward) * 10, Color.red, 2);
 
-        if(Physics.Raycast(shootRay, out RaycastHit hitInfo, _maxShootDistance))
+        if (Physics.Raycast(shootRay, out RaycastHit hitInfo, _maxShootDistance))
         {
             Health health = hitInfo.transform.gameObject.GetComponent<Health>();
             
@@ -112,7 +107,7 @@ public class TurretBehaviour : MonoBehaviour
             }
         }
 
-       
+        RemoveInactive();
 
     }
 

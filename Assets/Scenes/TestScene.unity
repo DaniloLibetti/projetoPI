@@ -133,7 +133,7 @@ PrefabInstance:
     - target: {fileID: 1070449361811706791, guid: 78d4bb81246aadf43abe61b0e32ca84f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 38.03
+      value: 27.12
       objectReference: {fileID: 0}
     - target: {fileID: 1070449361811706791, guid: 78d4bb81246aadf43abe61b0e32ca84f,
         type: 3}
@@ -633,7 +633,7 @@ PrefabInstance:
     - target: {fileID: 1070449361811706791, guid: 78d4bb81246aadf43abe61b0e32ca84f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 27.91
+      value: 24.34
       objectReference: {fileID: 0}
     - target: {fileID: 1070449361811706791, guid: 78d4bb81246aadf43abe61b0e32ca84f,
         type: 3}
@@ -1519,7 +1519,7 @@ PrefabInstance:
     - target: {fileID: 1070449361811706791, guid: 78d4bb81246aadf43abe61b0e32ca84f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 32.77
+      value: 25.79
       objectReference: {fileID: 0}
     - target: {fileID: 1070449361811706791, guid: 78d4bb81246aadf43abe61b0e32ca84f,
         type: 3}
@@ -2292,7 +2292,7 @@ Transform:
   m_GameObject: {fileID: 1160413729}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.026802916, y: -0.058631625, z: 0.6713333}
+  m_LocalPosition: {x: -0.027, y: -0.058631625, z: 0.356}
   m_LocalScale: {x: 0.8375913, y: 2.2983503, z: 0.33333334}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2329,7 +2329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9993d0afb49ed40b70726ea1831e60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fireRate: 1
+  _fireRate: 2
   _damage: 100
   _maxShootDistance: 15
   _shootDistance: {fileID: 1198788262}
@@ -2375,8 +2375,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 2.8472428, z: 16.467705}
-  m_Center: {x: 0.10664272, y: 0.9236214, z: 7.3886757}
+  m_Size: {x: 1.4322847, y: 2.8472428, z: 11.395478}
+  m_Center: {x: 0.06609273, y: 0.9236214, z: 4.7241974}
 --- !u!1001 &1241894168
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2388,17 +2388,17 @@ PrefabInstance:
     - target: {fileID: 3305502031738288984, guid: ec5ea203d9f025245bd50cba6677443a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.02680292
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: 3305502031738288984, guid: ec5ea203d9f025245bd50cba6677443a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.05863163
+      value: -0.059
       objectReference: {fileID: 0}
     - target: {fileID: 3305502031738288984, guid: ec5ea203d9f025245bd50cba6677443a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.5
+      value: 0.46
       objectReference: {fileID: 0}
     - target: {fileID: 3305502031738288984, guid: ec5ea203d9f025245bd50cba6677443a,
         type: 3}
@@ -2439,6 +2439,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BurstParticle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3572490134723169305, guid: ec5ea203d9f025245bd50cba6677443a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3987019943360912564, guid: ec5ea203d9f025245bd50cba6677443a,
+        type: 3}
+      propertyPath: looping
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
