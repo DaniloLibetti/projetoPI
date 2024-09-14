@@ -31,9 +31,6 @@ public class TurretBehaviour : MonoBehaviour
     [SerializeField]
     private Transform _lockedEnemy;
     private float _minDist = Mathf.Infinity;
-    float timer = 0;
-    [SerializeField]
-    float firerate = 2f;
 
 
     // Start is called before the first frame update

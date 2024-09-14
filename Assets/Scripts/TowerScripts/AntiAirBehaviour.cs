@@ -23,6 +23,15 @@ public class AntiAirBehaviour : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("AirEnemy"))
+        {
+            _enemy.Remove(other.transform);
+            SetTarget();
+        }
+    }
+
     public void SetTarget()
     {
         if (_lockedEnemy == null || !_lockedEnemy.gameObject.activeSelf)
@@ -32,7 +41,6 @@ public class AntiAirBehaviour : MonoBehaviour
                 float dist = Vector3.Distance(t.position, transform.position);
                 if(dist < _minDist)
                 {
-                    Debug.Log(t.name);
                     _lockedEnemy = t;
                     _minDist = dist;
                     _head._enemyLocked = _lockedEnemy;
