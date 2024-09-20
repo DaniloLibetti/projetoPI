@@ -101,7 +101,7 @@ public class LaserTurret : MonoBehaviour
     {
         if(_lockedEnemy != null && _lockedEnemy.gameObject.activeSelf)
         {
-            GameObject bullet = Instantiate(_laserBullet, _firePoint.transform);
+            GameObject bullet = Instantiate(_laserBullet, _firePoint.position, _firePoint.rotation);
             bullet.GetComponent<Rigidbody>().velocity = _firePoint.forward * _bulletSpeed;
         }
     }
