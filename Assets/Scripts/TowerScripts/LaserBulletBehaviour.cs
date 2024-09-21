@@ -6,7 +6,6 @@ using UnityEngine.EventSystems;
 public class LaserBulletBehaviour : MonoBehaviour
 {
 
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("GroundEnemy"))

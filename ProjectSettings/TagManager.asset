@@ -9,6 +9,7 @@ TagManager:
   - Shot
   - AirEnemy
   - GroundEnemy
+  - Turret
   layers:
   - Default
   - TransparentFX

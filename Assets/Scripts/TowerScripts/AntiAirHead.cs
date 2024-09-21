@@ -37,7 +37,6 @@ public class AntiAirHead : MonoBehaviour
             behaviour._lockedTarget = _enemyLocked;
             behaviour._behaviour = _behaviour;
             //Invoke("Shoot", 2); //esta usando timer manual no AntiAirBehaviour
-
         }
     }
 }
