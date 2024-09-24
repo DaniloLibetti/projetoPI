@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3803136932576291540}
   - component: {fileID: 931459314598881762}
   - component: {fileID: 6297577243008242317}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MortarShot
   m_TagString: Shot
   m_Icon: {fileID: 0}

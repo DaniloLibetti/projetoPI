@@ -8,10 +8,6 @@ public class LaserTurret : MonoBehaviour
     [SerializeField]
     private float _fireRate = 1f;
     [SerializeField]
-    private float _damage = 20f;
-    [SerializeField]
-    private float _maxShootDistance = 10f;
-    [SerializeField]
     private BoxCollider _shootDistance;
     [SerializeField]
     private GameObject _laserBullet;

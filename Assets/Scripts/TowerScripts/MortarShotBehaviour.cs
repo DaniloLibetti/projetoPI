@@ -17,7 +17,7 @@ public class MortarShotBehaviour : MonoBehaviour
             {
                 if(hitCollider.CompareTag("Enemy"))
                 {
-                    hitCollider.GetComponent<Health>().ReceiveDamage(100);
+                    hitCollider.GetComponent<Health>().ReceiveDamage(50);
                 }
                 //hitCollider.SendMessage("AddDamage");
             }

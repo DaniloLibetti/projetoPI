@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7200488412090069478}
   - component: {fileID: -7066564849461251413}
   - component: {fileID: -4862229101926183559}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AntiAirMissle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,6 +151,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lockedTarget: {fileID: 0}
   _rB: {fileID: -7066564849461251413}
+  _behaviour: {fileID: 0}
+  enemy: {fileID: 0}
 --- !u!1 &5356023525233005331
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,7 +165,7 @@ GameObject:
   - component: {fileID: 3972668443771138970}
   - component: {fileID: 3246792290644220454}
   - component: {fileID: 7947893306128029098}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,7 +270,7 @@ GameObject:
   - component: {fileID: 277326751930574537}
   - component: {fileID: 3253039271435323210}
   - component: {fileID: 3406260938701766089}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -373,7 +375,7 @@ GameObject:
   - component: {fileID: 5983746369120793238}
   - component: {fileID: 6642520752353325669}
   - component: {fileID: 5075281519900565822}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
