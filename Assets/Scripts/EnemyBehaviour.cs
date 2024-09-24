@@ -8,25 +8,54 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField]
     private float _damage;
     [SerializeField]
-    private BoxCollider _boxColiider;
+    private float _speed;
+    [SerializeField]
+    private LayerMask _layerMask;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Shoot();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Translate(_speed * Time.deltaTime, 0, 0);
     }
 
-    private void OnTriggerEnter(Collider other)
+
+    private void Shoot()
     {
-        if (other.CompareTag("Turret"))
+
+        Ray shootRay = new Ray(transform.position, Vector3.left);
+        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.left) * 4, Color.red, 2);
+
+        if (Physics.Raycast(shootRay, out RaycastHit hitInfo, 4, _layerMask))
         {
-            other.GetComponent<Health>().ReceiveDamage(_damage);
+            Health health = hitInfo.transform.gameObject.GetComponent<Health>();
+
+            if (health == null && (hitInfo.transform.position - transform.position).x <= 4)
+            {
+                Debug.LogWarning("acertou algo sem health. . . . . . .");
+                _speed = -5;
+            }
+            else if (health != null && (hitInfo.transform.position - transform.position).x <= 4)
+            {
+                health.ReceiveDamage(_damage);
+                _speed = 0;
+            }
+
         }
+        else
+        {
+            _speed = -5;
+        }
+
+        Invoke("Shoot", .2f);
+
     }
+
 }

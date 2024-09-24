@@ -59,8 +59,10 @@ public class LaserTurret : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Called");
         if (other.CompareTag("GroundEnemy"))
         {
+            
             _enemy.Add(other.transform);
             SetTarget();
         }
