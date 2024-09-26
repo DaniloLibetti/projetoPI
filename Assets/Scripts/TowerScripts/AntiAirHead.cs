@@ -38,5 +38,9 @@ public class AntiAirHead : MonoBehaviour
             behaviour._behaviour = _behaviour;
             //Invoke("Shoot", 2); //esta usando timer manual no AntiAirBehaviour
         }
+        else if(_enemyLocked == null || !_enemyLocked.gameObject.activeSelf)
+        {
+            _behaviour.RemoveInactive();
+        }
     }
 }

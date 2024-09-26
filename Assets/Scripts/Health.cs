@@ -17,13 +17,15 @@ public class Health : MonoBehaviour
         if(_health <= 0 && transform.parent)
         {
             //gameObject.SetActive(false);
-            //transform.parent.gameObject.SetActive(false);
-            Destroy(transform.parent.gameObject);
+            transform.parent.gameObject.SetActive(false);
+            transform.parent.transform.position = new Vector3(500, 500, 500);
+            //Destroy(transform.parent.gameObject);
         }
         else if(_health <= 0 && !transform.parent)
         {
-            //gameObject.SetActive(false);
-            Destroy(this.gameObject);
+            gameObject.SetActive(false);
+            transform.position = new Vector3(500, 500, 500);
+            //Destroy(this.gameObject);
         }
     }
 }

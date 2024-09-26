@@ -51,17 +51,14 @@ public class AntiAirMissleBehaviour : MonoBehaviour
         if (other.CompareTag("AirEnemy"))
         {
             other.GetComponent<Health>().ReceiveDamage(50);
-            _behaviour._enemy.Remove(other.transform);
-            _behaviour._lockedEnemy = null;
-            _behaviour._minDist = Mathf.Infinity;
-            _behaviour.SetTarget();
-            //_behaviour.RemoveInactive();
+            _behaviour.RemoveInactive();
             this.gameObject.SetActive(false);
         }
     }
 
     private void NoTarget()
     {
+        transform.position = new Vector3(500, 500, 500);
         this.gameObject.SetActive(false);
     }
 }

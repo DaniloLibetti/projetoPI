@@ -120,7 +120,7 @@ public class TurretBehaviour : MonoBehaviour
 
     public void RemoveInactive()
     {
-        if (!_lockedEnemy.gameObject)
+        if (!_lockedEnemy.gameObject.activeSelf)
         {
             _enemy.Remove(_lockedEnemy);
             _lockedEnemy = null;
