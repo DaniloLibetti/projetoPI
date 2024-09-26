@@ -7,7 +7,7 @@ public class AntiAirBehaviour : MonoBehaviour
     [SerializeField]
     private List<Transform> _enemy = new List<Transform>();
     [SerializeField]
-    private Transform _lockedEnemy;
+    public Transform _lockedEnemy;
     [SerializeField]
     private float _minDist = Mathf.Infinity;
     [SerializeField]

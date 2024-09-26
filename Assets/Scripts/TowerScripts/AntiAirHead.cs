@@ -15,6 +15,18 @@ public class AntiAirHead : MonoBehaviour
     private Transform _launchPos;
     [SerializeField]
     private AntiAirBehaviour _behaviour;
+    [SerializeField]
+    private List<GameObject> _missles = new();
+
+    private void Start()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            GameObject missles = Instantiate(_missle, _launchPos.position, Quaternion.identity);
+            missles.SetActive(false);
+            _missles.Add(missles);
+        }
+    }
 
     // Update is called once per frame
     void Update()
@@ -29,18 +41,50 @@ public class AntiAirHead : MonoBehaviour
 
     public void Shoot()
     {
-        if (_enemyLocked != null && _enemyLocked.gameObject.activeSelf)
+
+        GameObject missle = GetMissles();
+        if (missle != null)
         {
-            GameObject missle = Instantiate(_missle, _launchPos.position, Quaternion.identity);
+            missle.transform.position = _launchPos.position;
             missle.GetComponent<Rigidbody>().AddForce(new Vector3(_horizontalShotForce, _verticalShotForce, 0));
             AntiAirMissleBehaviour behaviour = missle.GetComponent<AntiAirMissleBehaviour>();
+            behaviour._head = GetComponent<AntiAirHead>();
             behaviour._lockedTarget = _enemyLocked;
             behaviour._behaviour = _behaviour;
-            //Invoke("Shoot", 2); //esta usando timer manual no AntiAirBehaviour
+            missle.SetActive(true);
         }
-        else if(_enemyLocked == null || !_enemyLocked.gameObject.activeSelf)
+        else
+        {
+            GameObject missles = Instantiate(_missle, _launchPos.position, Quaternion.identity);
+            missles.SetActive(false);
+            _missles.Add(missles);
+        }
+        if(_enemyLocked == null || !_enemyLocked.gameObject.activeSelf)
         {
             _behaviour.RemoveInactive();
         }
+
+
+        //if (_enemyLocked != null && _enemyLocked.gameObject.activeSelf)
+        //{
+        //    GameObject missle = Instantiate(_missle, _launchPos.position, Quaternion.identity);
+        //    missle.GetComponent<Rigidbody>().AddForce(new Vector3(_horizontalShotForce, _verticalShotForce, 0));
+        //    AntiAirMissleBehaviour behaviour = missle.GetComponent<AntiAirMissleBehaviour>();
+        //    behaviour._lockedTarget = _enemyLocked;
+        //    behaviour._behaviour = _behaviour;
+        //    //Invoke("Shoot", 2); //esta usando timer manual no AntiAirBehaviour
+        //}
+    }
+
+    public GameObject GetMissles()
+    {
+        for (int i = 0; i < _missles.Count; i++)
+        {
+            if (!_missles[i].activeInHierarchy)
+            {
+                return _missles[i];
+            }
+        }
+        return null;
     }
 }

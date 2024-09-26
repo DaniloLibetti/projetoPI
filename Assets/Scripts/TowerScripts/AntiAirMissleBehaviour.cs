@@ -9,6 +9,7 @@ public class AntiAirMissleBehaviour : MonoBehaviour
     [SerializeField]
     private Rigidbody _rB;
     public AntiAirBehaviour _behaviour;
+    public AntiAirHead _head;
     public EnemyBehaviour enemy;
 
     private void Start()
@@ -51,6 +52,8 @@ public class AntiAirMissleBehaviour : MonoBehaviour
         if (other.CompareTag("AirEnemy"))
         {
             other.GetComponent<Health>().ReceiveDamage(50);
+            _head._enemyLocked = null;
+            _behaviour._lockedEnemy = null;
             _behaviour.RemoveInactive();
             this.gameObject.SetActive(false);
         }
