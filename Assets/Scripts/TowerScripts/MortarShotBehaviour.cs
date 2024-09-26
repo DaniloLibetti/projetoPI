@@ -21,7 +21,7 @@ public class MortarShotBehaviour : MonoBehaviour
                 }
                 //hitCollider.SendMessage("AddDamage");
             }
-            this.gameObject.SetActive(false);
+            Destroy(this.gameObject);
         }
     }
 }

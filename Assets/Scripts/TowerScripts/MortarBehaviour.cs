@@ -15,6 +15,10 @@ public class MortarBehaviour : MonoBehaviour
 
     private void Start()
     {
+        if(transform.rotation.y == 1)
+        {
+            _horizontalShotForce *= -1;
+        }
         Invoke("Shoot", 1);
     }
 

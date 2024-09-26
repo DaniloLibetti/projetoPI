@@ -268,6 +268,7 @@ GameObject:
   - component: {fileID: 8615776282118999236}
   - component: {fileID: 164494484215611512}
   - component: {fileID: 6905206345739786692}
+  - component: {fileID: 1279537609713068944}
   m_Layer: 6
   m_Name: Turret
   m_TagString: Turret
@@ -283,15 +284,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8161812440809144716}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -2.75, y: 0.88, z: -48.83}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6935137797977355055}
   - {fileID: 3406987080132125888}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &164494484215611512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,6 +335,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.4322847, y: 2.8472428, z: 11.395478}
   m_Center: {x: 0.06609273, y: 0.9236214, z: 4.7241974}
+--- !u!114 &1279537609713068944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8161812440809144716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d68e0506ea9b9de4197748dbefc93732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _nextTurrent: {fileID: 1602142994835611881, guid: 93ea7733862cd044db094983c29c5d1c,
+    type: 3}
 --- !u!1001 &4344241175832783271
 PrefabInstance:
   m_ObjectHideFlags: 0

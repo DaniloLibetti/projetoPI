@@ -10,20 +10,25 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField]
     private float _speed;
     [SerializeField]
+    private Transform _basePos;
+    [SerializeField]
     private LayerMask _layerMask;
+    private Vector3 _direction;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
+        _direction = transform.position - _basePos.position;
+        _direction.Normalize();
         Shoot();
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(_speed * Time.deltaTime, 0, 0);
+        transform.Translate(_direction.x * _speed * Time.deltaTime, 0, 0);
     }
 
 
@@ -37,11 +42,11 @@ public class EnemyBehaviour : MonoBehaviour
         {
             Health health = hitInfo.transform.gameObject.GetComponent<Health>();
 
-            if (health == null && (hitInfo.transform.position - transform.position).x <= 2)
-            {
-                _speed = -5;
-            }
-            else if (health != null && (hitInfo.transform.position - transform.position).x <= 2)
+            //if (health == null && (hitInfo.transform.position - transform.position).x <= 2)
+            //{
+            //    _speed = -5;
+            //}
+            if (health != null && (hitInfo.transform.position - transform.position).x <= 2)
             {
                 health.ReceiveDamage(_damage);
                 _speed = 0;
