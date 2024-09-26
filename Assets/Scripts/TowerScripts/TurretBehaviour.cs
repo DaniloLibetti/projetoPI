@@ -14,6 +14,8 @@ public class TurretBehaviour : MonoBehaviour
     private float _maxShootDistance = 10f;
     [SerializeField]
     private BoxCollider _shootDistance;
+    [SerializeField]
+    private LayerMask _ignoredLayer;
 
     [SerializeField]
     private Transform _turretPivot;
@@ -69,16 +71,24 @@ public class TurretBehaviour : MonoBehaviour
         {
             foreach (Transform t in _enemy)
             {
-                float dist = Vector3.Distance(t.position, transform.position);
-                if (dist < _minDist)
+                if (t != null)
                 {
-                    Debug.Log(t.name);
-                    _lockedEnemy = t;
-                    _minDist = dist;
-                   
+                    float dist = Vector3.Distance(t.position, transform.position);
+                    if (dist < _minDist)
+                    {
+                        _lockedEnemy = t;
+                        _minDist = dist;
+
+                    }
                 }
             }
-            //_head.Shoot();
+            for(int i = 0; i < _enemy.Count; i++)
+            {
+                if(_enemy[i] == null)
+                {
+                    _enemy.RemoveAt(i);
+                }
+            }
         }
     }
 
@@ -89,16 +99,16 @@ public class TurretBehaviour : MonoBehaviour
         Ray shootRay = new Ray(_firePoint.position, _firePoint.forward);
         Debug.DrawRay(_firePoint.position, _firePoint.TransformDirection(Vector3.forward) * 10, Color.red, 2);
 
-        if (Physics.Raycast(shootRay, out RaycastHit hitInfo, _maxShootDistance))
+        if (Physics.Raycast(shootRay, out RaycastHit hitInfo, _maxShootDistance, ~_ignoredLayer))
         {
             Health health = hitInfo.transform.gameObject.GetComponent<Health>();
             
             
             if(health == null)
             {
-                Debug.LogWarning("acertou algo sem health. . . . . . .");
+                //Debug.LogWarning("acertou algo sem health. . . . . . .");
             }
-            else
+            else if(hitInfo.transform.CompareTag("GroundEnemy"))
             {
                 health.ReceiveDamage(_damage);
             }
@@ -110,7 +120,7 @@ public class TurretBehaviour : MonoBehaviour
 
     public void RemoveInactive()
     {
-        if (!_lockedEnemy.gameObject.activeSelf)
+        if (!_lockedEnemy.gameObject)
         {
             _enemy.Remove(_lockedEnemy);
             _lockedEnemy = null;

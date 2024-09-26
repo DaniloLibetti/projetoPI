@@ -17,11 +17,13 @@ public class Health : MonoBehaviour
         if(_health <= 0 && transform.parent)
         {
             //gameObject.SetActive(false);
-            transform.parent.gameObject.SetActive(false);
+            //transform.parent.gameObject.SetActive(false);
+            Destroy(transform.parent.gameObject);
         }
         else if(_health <= 0 && !transform.parent)
         {
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
+            Destroy(this.gameObject);
         }
     }
 }

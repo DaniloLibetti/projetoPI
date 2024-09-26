@@ -266,7 +266,7 @@ Transform:
   m_GameObject: {fileID: 402832691}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -251.5, y: -3.26, z: 3.1}
+  m_LocalPosition: {x: -250, y: -3.26, z: 1.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -314,6 +314,7 @@ MonoBehaviour:
   _turrents:
   - {fileID: 8686429905571978779, guid: 320cc85c370f3cc409172d353bbba692, type: 3}
   - {fileID: 8161812440809144716, guid: 0362476cbec1ed845b60ebac22b5de96, type: 3}
+  - {fileID: 1176226212266985896, guid: 6bca540ee4fdd8f4eba20b8d7f2ccbd1, type: 3}
   _instantiationTarget: {fileID: 567973840}
 --- !u!1 &917460540
 GameObject:
@@ -341,7 +342,7 @@ Transform:
   m_GameObject: {fileID: 917460540}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 251.5, y: -3.26, z: 2.89}
+  m_LocalPosition: {x: 100, y: -3.26, z: 1.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

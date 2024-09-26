@@ -7,13 +7,13 @@ public class EnemyBehaviour : MonoBehaviour
     [Header("Properties")]
     [SerializeField]
     private float _damage;
-    [SerializeField]
-    private float _speed;
+    public float _speed;
     [SerializeField]
     private Transform _basePos;
     [SerializeField]
     private LayerMask _layerMask;
     private Vector3 _direction;
+    public Vector3 velocity;
 
 
 
@@ -42,10 +42,10 @@ public class EnemyBehaviour : MonoBehaviour
         {
             Health health = hitInfo.transform.gameObject.GetComponent<Health>();
 
-            //if (health == null && (hitInfo.transform.position - transform.position).x <= 2)
-            //{
-            //    _speed = -5;
-            //}
+            if (health == null && (hitInfo.transform.position - transform.position).x <= 2)
+            {
+                _speed = -5;
+            }
             if (health != null && (hitInfo.transform.position - transform.position).x <= 2)
             {
                 health.ReceiveDamage(_damage);

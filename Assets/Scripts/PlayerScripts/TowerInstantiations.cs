@@ -19,6 +19,10 @@ public class TowerInstantiations : MonoBehaviour
         {
             Instantiate(_turrents[1], new Vector3(_instantiationTarget.position.x, -4.18f, _instantiationTarget.position.z), _instantiationTarget.rotation);
         }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            Instantiate(_turrents[2], new Vector3(_instantiationTarget.position.x, -4.18f, _instantiationTarget.position.z), Quaternion.Euler(0, 0, 0));
+        }
         if (Input.GetKeyDown(KeyCode.E))
         {
             UpgradeTurret();

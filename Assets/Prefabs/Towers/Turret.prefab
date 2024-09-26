@@ -306,9 +306,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fireRate: 2
-  _damage: 0
+  _damage: 20
   _maxShootDistance: 15
   _shootDistance: {fileID: 6905206345739786692}
+  _ignoredLayer:
+    serializedVersion: 2
+    m_Bits: 64
   _turretPivot: {fileID: 3406987080132125888}
   _firePoint: {fileID: 1403785516650044850}
   _shootEffect: {fileID: 800908280759039251}
@@ -349,6 +352,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nextTurrent: {fileID: 1602142994835611881, guid: 93ea7733862cd044db094983c29c5d1c,
     type: 3}
+  _yPosition: 0
+  _zPosition: 0
 --- !u!1001 &4344241175832783271
 PrefabInstance:
   m_ObjectHideFlags: 0

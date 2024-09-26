@@ -9,13 +9,13 @@ public class AntiAirMissleBehaviour : MonoBehaviour
     [SerializeField]
     private Rigidbody _rB;
     public AntiAirBehaviour _behaviour;
-    public EnemyMortarTest enemy;
+    public EnemyBehaviour enemy;
 
     private void Start()
     {
         if(_lockedTarget != null)
         {
-            enemy = _lockedTarget.GetComponent<EnemyMortarTest>();
+            enemy = _lockedTarget.GetComponent<EnemyBehaviour>();
         }
     }
 
@@ -24,7 +24,7 @@ public class AntiAirMissleBehaviour : MonoBehaviour
     {
         if (_lockedTarget != null && enemy == null)//so vai rodar ruma vez, caso lockedtarget seja null no start
         {
-            enemy = _lockedTarget.GetComponent<EnemyMortarTest>();
+            enemy = _lockedTarget.GetComponent<EnemyBehaviour>();
         }
         if (_lockedTarget != null && _lockedTarget.gameObject.activeSelf)
         {
@@ -50,9 +50,12 @@ public class AntiAirMissleBehaviour : MonoBehaviour
     {
         if (other.CompareTag("AirEnemy"))
         {
-            //_behaviour._enemy.Remove(other.transform);
             other.GetComponent<Health>().ReceiveDamage(50);
-            _behaviour.RemoveInactive();
+            _behaviour._enemy.Remove(other.transform);
+            _behaviour._lockedEnemy = null;
+            _behaviour._minDist = Mathf.Infinity;
+            _behaviour.SetTarget();
+            //_behaviour.RemoveInactive();
             this.gameObject.SetActive(false);
         }
     }

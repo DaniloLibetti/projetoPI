@@ -48,6 +48,11 @@ public class LaserTurret : MonoBehaviour
             _shootCooldown = _fireRate;
             Shoot();
         }
+        if(_shootCooldown <= 0 && _lockedEnemy == null)
+        {
+            _shootCooldown = _fireRate;
+            SetTarget();
+        }
 
         _shootCooldown -= Time.deltaTime;
 
@@ -55,7 +60,6 @@ public class LaserTurret : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Called");
         if (other.CompareTag("GroundEnemy"))
         {
             
@@ -70,13 +74,22 @@ public class LaserTurret : MonoBehaviour
         {
             foreach (Transform t in _enemy)
             {
-                float dist = Vector3.Distance(t.position, transform.position);
-                if (dist < _minDist)
+                if (t != null)
                 {
-                    Debug.Log(t.name);
-                    _lockedEnemy = t;
-                    _minDist = dist;
+                    float dist = Vector3.Distance(t.position, transform.position);
+                    if (dist < _minDist)
+                    {
+                        _lockedEnemy = t;
+                        _minDist = dist;
 
+                    }
+                }
+            }
+            for (int i = 0; i < _enemy.Count; i++)
+            {
+                if (_enemy[i] == null)
+                {
+                    _enemy.RemoveAt(i);
                 }
             }
         }

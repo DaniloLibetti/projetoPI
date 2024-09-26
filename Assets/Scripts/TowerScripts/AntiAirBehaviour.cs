@@ -7,13 +7,18 @@ public class AntiAirBehaviour : MonoBehaviour
 
     public List<Transform> _enemy = new List<Transform>();
     [SerializeField]
-    private Transform _lockedEnemy;
-    private float _minDist = Mathf.Infinity;
+    public Transform _lockedEnemy;
+    public float _minDist = Mathf.Infinity;
     [SerializeField]
     private AntiAirHead _head;
     float timer = 0;
     [SerializeField]
     float firerate = 2;
+
+    private void Start()
+    {
+        GetComponent<BoxCollider>().enabled = true;
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("AirEnemy"))
@@ -36,7 +41,14 @@ public class AntiAirBehaviour : MonoBehaviour
     {
         if (_lockedEnemy == null || !_lockedEnemy.gameObject.activeSelf)
         {
-            foreach(Transform t in _enemy)
+            for (int i = 0; i < _enemy.Count; i++)
+            {
+                if (_enemy[i] == null)
+                {
+                    _enemy.Remove(_enemy[i]);
+                }
+            }
+            foreach (Transform t in _enemy)
             {
                 float dist = Vector3.Distance(t.position, transform.position);
                 if(dist < _minDist)
@@ -61,12 +73,12 @@ public class AntiAirBehaviour : MonoBehaviour
     }
     public void RemoveInactive()
     {
-        if (!_lockedEnemy.gameObject.activeSelf)
-        {
-            _enemy.Remove(_lockedEnemy);
-            _lockedEnemy = null;
-            _minDist = Mathf.Infinity;
-        }
+        //if (_lockedEnemy.transform == null)
+        //{
+        //    _enemy.Remove(_lockedEnemy);
+        //    _lockedEnemy = null;
+        //    _minDist = Mathf.Infinity;
+        //}
         SetTarget();
     }
 }
