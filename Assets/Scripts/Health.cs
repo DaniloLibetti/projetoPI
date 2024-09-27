@@ -6,7 +6,7 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField]
-    private float _health = 100f;
+    public float _health = 100f;
 
 
 
