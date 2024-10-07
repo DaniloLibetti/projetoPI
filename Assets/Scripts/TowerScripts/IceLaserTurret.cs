@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireLaserTurret : MonoBehaviour
+public class IceLaserTurret : MonoBehaviour
 {
     [Header("Properties")]
     [SerializeField]
     private bool _useLaser = false;
     [SerializeField]
     private float _damageOverTime = 50;
+    [SerializeField]
+    private float _slowAmount = 0.5f;
     [SerializeField]
     private Transform _firePoint;
     [SerializeField]
@@ -20,12 +22,13 @@ public class FireLaserTurret : MonoBehaviour
     [SerializeField]
     private ParticleSystem _laserHitParticle;
 
+
     public List<Transform> _enemy = new List<Transform>();
     [SerializeField]
     private Transform _lockedEnemy;
 
     private Health _targetEnemy;
-
+    private EnemyBehaviour _targetEnemyBehaviour;
     private float _minDist = Mathf.Infinity;
 
 
@@ -36,10 +39,10 @@ public class FireLaserTurret : MonoBehaviour
         {
             if (_useLaser)
             {
-                FireLaser();
-                
+                IceLaser();
+
             }
-            
+
         }
 
         if (_lockedEnemy == null)
@@ -58,14 +61,15 @@ public class FireLaserTurret : MonoBehaviour
         }
     }
 
-    private void FireLaser()
+    private void IceLaser()
     {
 
         _targetEnemy.ReceiveDamage(_damageOverTime * Time.deltaTime);
+        //_targetEnemyBehaviour.Slow(_slowAmount);
 
         if (!_lineRenderer.enabled)
         {
-            _lineRenderer.enabled= true;
+            _lineRenderer.enabled = true;
             _laserHitParticle.Play();
             _laserHeadParticle.Play();
         }
@@ -97,7 +101,7 @@ public class FireLaserTurret : MonoBehaviour
     {
         if (_lockedEnemy == null || !_lockedEnemy.gameObject.activeSelf)
         {
-            
+
             foreach (Transform t in _enemy)
             {
                 if (t != null)

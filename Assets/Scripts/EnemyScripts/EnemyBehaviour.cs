@@ -7,6 +7,7 @@ public class EnemyBehaviour : MonoBehaviour
     [Header("Properties")]
     [SerializeField]
     private float _damage;
+    public float _startSpeed = -5f;
     public float _speed;
     [SerializeField]
     private Transform _basePos;
@@ -20,6 +21,8 @@ public class EnemyBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _speed = _startSpeed;
+
         _direction = transform.position - _basePos.position;
         _direction.Normalize();
         Shoot();
@@ -29,8 +32,15 @@ public class EnemyBehaviour : MonoBehaviour
     void Update()
     {
         transform.Translate(_direction.x * _speed * Time.deltaTime, 0, 0);
+
+        _speed = _startSpeed;
     }
 
+
+    public void Slow (float pct)
+    {
+        _speed = _startSpeed * (1f - pct);
+    } 
 
     private void Shoot()
     {
