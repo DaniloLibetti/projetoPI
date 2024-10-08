@@ -41,7 +41,6 @@ public class AntiAirHead : MonoBehaviour
 
     public void Shoot()
     {
-
         GameObject missle = GetMissles();
         if (missle != null)
         {
@@ -58,10 +57,7 @@ public class AntiAirHead : MonoBehaviour
             GameObject missles = Instantiate(_missle, _launchPos.position, Quaternion.identity);
             missles.SetActive(false);
             _missles.Add(missles);
-        }
-        if(_enemyLocked == null || !_enemyLocked.gameObject.activeSelf)
-        {
-            _behaviour.RemoveInactive();
+            //Shoot();
         }
 
 
