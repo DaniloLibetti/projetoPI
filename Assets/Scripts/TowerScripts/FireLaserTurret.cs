@@ -20,6 +20,10 @@ public class FireLaserTurret : MonoBehaviour
     [SerializeField]
     private ParticleSystem _laserHitParticle;
 
+    [SerializeField]
+    private float _timer;
+
+
     public List<Transform> _enemy = new List<Transform>();
     [SerializeField]
     private Transform _lockedEnemy;
@@ -32,7 +36,7 @@ public class FireLaserTurret : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_lockedEnemy != null)
+        if (_lockedEnemy != null && _lockedEnemy.gameObject.activeInHierarchy)
         {
             if (_useLaser)
             {
@@ -42,7 +46,7 @@ public class FireLaserTurret : MonoBehaviour
             
         }
 
-        if (_lockedEnemy == null)
+        if (_lockedEnemy == null || !_lockedEnemy.gameObject.activeInHierarchy)
         {
             if (_useLaser)
             {
@@ -82,6 +86,15 @@ public class FireLaserTurret : MonoBehaviour
 
     }
 
+    void FixedUpdate()
+    {
+        _timer += Time.deltaTime;
+        if (_timer >= 1)
+        {
+            SetTarget();
+            _timer = 0;
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -115,14 +128,18 @@ public class FireLaserTurret : MonoBehaviour
             {
                 if (_enemy[i] == null)
                 {
-                    _enemy.RemoveAt(i);
+                    _enemy.Remove(_lockedEnemy);
+                    _lockedEnemy = null;
                 }
             }
         }
+
+        _minDist = Mathf.Infinity;
+
     }
 
 
-    public void RemoveInactive()
+    /*public void RemoveInactive()
     {
         if (!_lockedEnemy.gameObject.activeSelf)
         {
@@ -132,7 +149,7 @@ public class FireLaserTurret : MonoBehaviour
 
         }
         SetTarget();
-    }
+    }*/
 
 
 }

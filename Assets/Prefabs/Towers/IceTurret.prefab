@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1411444997966800044}
   - component: {fileID: 9210841921709609424}
   - component: {fileID: 1827512408100504089}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 2615997883824187582}
   - component: {fileID: 3714040287976714874}
   - component: {fileID: 391914166132004243}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IceTurret
   m_TagString: Turret
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
@@ -267,6 +267,7 @@ MonoBehaviour:
   _lineRenderer: {fileID: 2615997883824187582}
   _laserHeadParticle: {fileID: 5457147209711040541}
   _laserHitParticle: {fileID: 1788315581112660850}
+  _timer: 0
   _enemy: []
   _lockedEnemy: {fileID: 0}
 --- !u!65 &391914166132004243
@@ -299,7 +300,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6518370347174938070}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
@@ -333,7 +334,7 @@ GameObject:
   - component: {fileID: 8085798497065279395}
   - component: {fileID: 4513893622123542618}
   - component: {fileID: 2906671733508344740}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -438,6 +439,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: IceLaserParticle
+      objectReference: {fileID: 0}
+    - target: {fileID: 2008695730252529667, guid: 968f2d82a9b92dc45915424f8dc1cc93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6724056332914439253, guid: 968f2d82a9b92dc45915424f8dc1cc93,
         type: 3}
@@ -583,6 +589,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: IceLaserHit
+      objectReference: {fileID: 0}
+    - target: {fileID: 6437811914198917869, guid: fac3a15ba028d4c40873d5c08d11776c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

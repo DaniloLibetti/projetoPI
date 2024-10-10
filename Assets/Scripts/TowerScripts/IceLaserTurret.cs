@@ -49,7 +49,7 @@ public class IceLaserTurret : MonoBehaviour
 
         }
 
-        if (_lockedEnemy == null && !_lockedEnemy.gameObject.activeInHierarchy)
+        if (_lockedEnemy == null || !_lockedEnemy.gameObject.activeInHierarchy)
         {
             if (_useLaser)
             {
@@ -69,7 +69,7 @@ public class IceLaserTurret : MonoBehaviour
     {
 
         _targetEnemy.ReceiveDamage(_damageOverTime * Time.deltaTime);
-        //_targetEnemyBehaviour.Slow(_slowAmount);
+        
 
         if (!_lineRenderer.enabled)
         {
@@ -87,6 +87,8 @@ public class IceLaserTurret : MonoBehaviour
         _laserHitParticle.transform.position = _lockedEnemy.position + dir.normalized * 0.5f;
 
         _laserHitParticle.transform.rotation = Quaternion.LookRotation(dir);
+
+        _targetEnemyBehaviour.Slow(_slowAmount);
 
     }
 

@@ -554,12 +554,6 @@ MonoBehaviour:
   - {fileID: 3418980292504013615, guid: 425643cb13a4b2641a132c2657bf1c67, type: 3}
   _ground: []
   _flying: []
---- !u!4 &567973840 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3110304639450629661, guid: 18dfed8f22aef7e47b2ca4dcb8cc526c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1450732897}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &741306447
 GameObject:
   m_ObjectHideFlags: 0
@@ -628,29 +622,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &889390493 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2254515846516083240, guid: 18dfed8f22aef7e47b2ca4dcb8cc526c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1450732897}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &889390500
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 889390493}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0736099d666e45440b8310d7d55626d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _turrents:
-  - {fileID: 8686429905571978779, guid: 320cc85c370f3cc409172d353bbba692, type: 3}
-  - {fileID: 8161812440809144716, guid: 0362476cbec1ed845b60ebac22b5de96, type: 3}
-  - {fileID: 1176226212266985896, guid: 6bca540ee4fdd8f4eba20b8d7f2ccbd1, type: 3}
-  _instantiationTarget: {fileID: 567973840}
 --- !u!4 &889390506 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5382501785328459849, guid: 18dfed8f22aef7e47b2ca4dcb8cc526c,
@@ -990,6 +961,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 1259374283757720528, guid: 18dfed8f22aef7e47b2ca4dcb8cc526c,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     - target: {fileID: 1446336195007308718, guid: 18dfed8f22aef7e47b2ca4dcb8cc526c,
         type: 3}
       propertyPath: m_Layer
@@ -1045,6 +1021,17 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 3005260371919870076, guid: 18dfed8f22aef7e47b2ca4dcb8cc526c,
+        type: 3}
+      propertyPath: _turrents.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3005260371919870076, guid: 18dfed8f22aef7e47b2ca4dcb8cc526c,
+        type: 3}
+      propertyPath: _turrents.Array.data[3]
+      value: 
+      objectReference: {fileID: 1573776192976786612, guid: 47842b53f9aa83b4e8874098c654abea,
+        type: 3}
     - target: {fileID: 3050024864551412684, guid: 18dfed8f22aef7e47b2ca4dcb8cc526c,
         type: 3}
       propertyPath: m_Layer
@@ -1228,11 +1215,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2254515846516083240, guid: 18dfed8f22aef7e47b2ca4dcb8cc526c,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 889390500}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18dfed8f22aef7e47b2ca4dcb8cc526c, type: 3}
 --- !u!1 &1603908409
 GameObject:
