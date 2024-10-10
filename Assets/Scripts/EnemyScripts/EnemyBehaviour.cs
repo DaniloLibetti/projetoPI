@@ -33,14 +33,14 @@ public class EnemyBehaviour : MonoBehaviour
     {
         transform.Translate(_direction.x * _speed * Time.deltaTime, 0, 0);
 
-        _speed = _startSpeed;
+        //_speed = _startSpeed;
     }
 
 
-    public void Slow (float pct)
-    {
-        _speed = _startSpeed * (1f - pct);
-    } 
+    //public void Slow (float pct)
+    //{
+    //    _speed = _startSpeed * (1f - pct);
+    //} 
 
     private void Shoot()
     {

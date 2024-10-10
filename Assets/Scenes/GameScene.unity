@@ -1030,7 +1030,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _turrents.Array.data[3]
       value: 
-      objectReference: {fileID: 1573776192976786612, guid: 47842b53f9aa83b4e8874098c654abea,
+      objectReference: {fileID: 6117202042622985420, guid: d674d5c01956e814d85acd5beaecfb6d,
         type: 3}
     - target: {fileID: 3050024864551412684, guid: 18dfed8f22aef7e47b2ca4dcb8cc526c,
         type: 3}

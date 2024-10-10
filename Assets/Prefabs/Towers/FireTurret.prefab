@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 8867129812100324743}
   - component: {fileID: 6972037092946567342}
   - component: {fileID: 7212084281212741969}
-  m_Layer: 0
+  - component: {fileID: 1959468299246818050}
+  m_Layer: 6
   m_Name: Base
-  m_TagString: Untagged
+  m_TagString: Turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,6 +106,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1959468299246818050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 302756160539746124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c28421b59419d746bfee23478e02316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 200
 --- !u!1 &1290261479781987485
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,6 +416,7 @@ MonoBehaviour:
   _lineRenderer: {fileID: 1638931121109295380}
   _laserHeadParticle: {fileID: 3119902911009281687}
   _laserHitParticle: {fileID: 1539323430537733208}
+  _timer: 0
   _enemy: []
   _lockedEnemy: {fileID: 0}
 --- !u!65 &960824644705769977

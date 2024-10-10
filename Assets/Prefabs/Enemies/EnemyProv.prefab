@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1791797608210502223}
   - component: {fileID: 75477202696476458}
   - component: {fileID: -3366318051619017702}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemyProv
   m_TagString: GroundEnemy
   m_Icon: {fileID: 0}
@@ -136,6 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 2
+  _startSpeed: -5
   _speed: -5
   _basePos: {fileID: 4895615053033321403, guid: 885a1f7d1fcd0484a8088a3a38919dad,
     type: 3}
