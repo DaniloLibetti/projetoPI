@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class IceLaserTurret : MonoBehaviour
@@ -23,6 +24,9 @@ public class IceLaserTurret : MonoBehaviour
     private ParticleSystem _laserHitParticle;
 
 
+    [SerializeField]
+    private float _timer;
+
     public List<Transform> _enemy = new List<Transform>();
     [SerializeField]
     private Transform _lockedEnemy;
@@ -35,7 +39,7 @@ public class IceLaserTurret : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_lockedEnemy != null)
+        if (_lockedEnemy != null && _lockedEnemy.gameObject.activeInHierarchy)
         {
             if (_useLaser)
             {
@@ -45,7 +49,7 @@ public class IceLaserTurret : MonoBehaviour
 
         }
 
-        if (_lockedEnemy == null)
+        if (_lockedEnemy == null && !_lockedEnemy.gameObject.activeInHierarchy)
         {
             if (_useLaser)
             {
@@ -86,12 +90,20 @@ public class IceLaserTurret : MonoBehaviour
 
     }
 
+    void FixedUpdate()
+    {
+        _timer += Time.deltaTime;
+        if (_timer >= 1)
+        {
+            SetTarget();
+            _timer = 0;
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("GroundEnemy"))
         {
-
             _enemy.Add(other.transform);
             SetTarget();
         }
@@ -99,7 +111,7 @@ public class IceLaserTurret : MonoBehaviour
 
     public void SetTarget()
     {
-        if (_lockedEnemy == null || !_lockedEnemy.gameObject.activeSelf)
+        if (_lockedEnemy == null || !_lockedEnemy.gameObject.activeInHierarchy)
         {
 
             foreach (Transform t in _enemy)
@@ -117,18 +129,22 @@ public class IceLaserTurret : MonoBehaviour
             }
             for (int i = 0; i < _enemy.Count; i++)
             {
-                if (_enemy[i] == null)
+                if (!_enemy[i].gameObject.activeInHierarchy)
                 {
-                    _enemy.RemoveAt(i);
+                    _enemy.Remove(_lockedEnemy);
+                    _lockedEnemy = null;
                 }
             }
         }
+
+        _minDist = Mathf.Infinity;
+
     }
 
 
-    public void RemoveInactive()
+    /*public void RemoveInactive()
     {
-        if (!_lockedEnemy.gameObject.activeSelf)
+        if (!_lockedEnemy.gameObject.activeInHierarchy)
         {
             _enemy.Remove(_lockedEnemy);
             _lockedEnemy = null;
@@ -136,7 +152,7 @@ public class IceLaserTurret : MonoBehaviour
 
         }
         SetTarget();
-    }
+    }*/
 
 
 }
