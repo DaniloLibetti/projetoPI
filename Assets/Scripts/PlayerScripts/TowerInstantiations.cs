@@ -8,9 +8,23 @@ public class TowerInstantiations : MonoBehaviour
     private GameObject[] _turrents;
     [SerializeField]
     private Transform _instantiationTarget;
+    [SerializeField]
+    private GameObject _turretChoiceUi;
+    [SerializeField]
+    private GameObject _baseTurretUpgradeUi;
+    [SerializeField]
+    private GameObject _kineticTurretUpgradeUi;
+    [SerializeField]
+    private GameObject _laserTurretUpgradeUi;
+
 
     private void Update()
     {
+        if (Input.GetKeyUp(KeyCode.R))
+        {
+            _turretChoiceUi.SetActive(true);
+        }
+
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             Instantiate(_turrents[0], new Vector3(_instantiationTarget.position.x, -4.366f, _instantiationTarget.position.z), transform.rotation);
@@ -22,10 +36,6 @@ public class TowerInstantiations : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             Instantiate(_turrents[2], new Vector3(_instantiationTarget.position.x, -4.18f, _instantiationTarget.position.z), Quaternion.Euler(0, 0, 0));
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            Instantiate(_turrents[3], new Vector3(_instantiationTarget.position.x, -4.18f, _instantiationTarget.position.z), _instantiationTarget.rotation);
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -48,4 +58,20 @@ public class TowerInstantiations : MonoBehaviour
             }
         }
     }
+
+    public void MortarInstatiate()
+    {
+        Instantiate(_turrents[0], new Vector3(_instantiationTarget.position.x, -4.366f, _instantiationTarget.position.z), transform.rotation);
+    }
+
+    public void TurretInstantiate()
+    {
+        Instantiate(_turrents[1], new Vector3(_instantiationTarget.position.x, -4.18f, _instantiationTarget.position.z), _instantiationTarget.rotation);
+    }
+
+    public void BarrierInstantiate()
+    {
+        Instantiate(_turrents[2], new Vector3(_instantiationTarget.position.x, -4.18f, _instantiationTarget.position.z), Quaternion.Euler(0, 0, 0));
+    }
+
 }
