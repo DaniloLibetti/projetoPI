@@ -269,6 +269,7 @@ GameObject:
   - component: {fileID: 164494484215611512}
   - component: {fileID: 6905206345739786692}
   - component: {fileID: 1279537609713068944}
+  - component: {fileID: 5828207245773722087}
   m_Layer: 6
   m_Name: Turret
   m_TagString: Turret
@@ -354,6 +355,33 @@ MonoBehaviour:
     type: 3}
   _yPosition: 0
   _zPosition: 0
+--- !u!114 &5828207245773722087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8161812440809144716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb69f38414fd7324ebd808c04ad3115a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _baseTurretUpgradeUi: {fileID: 5055894503593295777, guid: 23622e42069cc3646a3231127d17630b,
+    type: 3}
+  _kineticTurretUpgradeUi: {fileID: 4952793388848951973, guid: 16acfb636ba610e44bf767ac258e3523,
+    type: 3}
+  _laserTurretUpgradeUi: {fileID: 8133575966081992828, guid: 2e0053685733a8d4c8a1e377cf5dac9b,
+    type: 3}
+  _kineticTurret: {fileID: 0}
+  _sniperTurret: {fileID: 0}
+  _machineGunTurret: {fileID: 0}
+  _laserTurret: {fileID: 1602142994835611881, guid: 93ea7733862cd044db094983c29c5d1c,
+    type: 3}
+  _fireTurret: {fileID: 6117202042622985420, guid: d674d5c01956e814d85acd5beaecfb6d,
+    type: 3}
+  _iceTurret: {fileID: 1573776192976786612, guid: 47842b53f9aa83b4e8874098c654abea,
+    type: 3}
 --- !u!1001 &4344241175832783271
 PrefabInstance:
   m_ObjectHideFlags: 0
