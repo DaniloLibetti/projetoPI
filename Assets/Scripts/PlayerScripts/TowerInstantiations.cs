@@ -25,7 +25,7 @@ public class TowerInstantiations : MonoBehaviour
             _turretChoiceUi.SetActive(true);
         }
 
-        /* if (Input.GetKeyDown(KeyCode.Alpha1))
+        /*if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             Instantiate(_turrents[0], new Vector3(_instantiationTarget.position.x, -4.366f, _instantiationTarget.position.z), transform.rotation);
         }
@@ -62,16 +62,19 @@ public class TowerInstantiations : MonoBehaviour
     public void MortarInstatiate()
     {
         Instantiate(_turrents[0], new Vector3(_instantiationTarget.position.x, -4.366f, _instantiationTarget.position.z), transform.rotation);
+        _turretChoiceUi.gameObject.SetActive(false);
     }
 
     public void TurretInstantiate()
     {
         Instantiate(_turrents[1], new Vector3(_instantiationTarget.position.x, -4.18f, _instantiationTarget.position.z), _instantiationTarget.rotation);
+        _turretChoiceUi.gameObject.SetActive(false);
     }
 
     public void BarrierInstantiate()
     {
         Instantiate(_turrents[2], new Vector3(_instantiationTarget.position.x, -4.18f, _instantiationTarget.position.z), Quaternion.Euler(0, 0, 0));
+        _turretChoiceUi.gameObject.SetActive(false);
     }
 
 }

@@ -362,16 +362,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8161812440809144716}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb69f38414fd7324ebd808c04ad3115a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _baseTurretUpgradeUi: {fileID: 5055894503593295777, guid: 23622e42069cc3646a3231127d17630b,
+  _baseTurretUpgradeUi: {fileID: 2879363413538921988, guid: f1164f861d1c16048ae41d573320d9a0,
     type: 3}
-  _kineticTurretUpgradeUi: {fileID: 4952793388848951973, guid: 16acfb636ba610e44bf767ac258e3523,
+  _kineticTurretUpgradeUi: {fileID: 8498307219713564693, guid: 03532592c404fad45a84756bc7c5f0cd,
     type: 3}
-  _laserTurretUpgradeUi: {fileID: 8133575966081992828, guid: 2e0053685733a8d4c8a1e377cf5dac9b,
+  _laserTurretUpgradeUi: {fileID: 1918800583152827099, guid: 3705c1f7e8d86c241aa6c7914e4744bf,
     type: 3}
   _kineticTurret: {fileID: 0}
   _sniperTurret: {fileID: 0}

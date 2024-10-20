@@ -40,9 +40,21 @@ public class BaseTurretUpgrade : MonoBehaviour
         
     }
 
-    public void KineticUpgrade()
+    public void LaserUpgrade()
     {
-        GameObject upgraded = Instantiate(_kineticTurret, transform.position, transform.rotation);
+        GameObject upgraded = Instantiate(_laserTurret, transform.position, transform.rotation);
+        Destroy(this.gameObject);
     }
 
+    public void FireUpgrade()
+    {
+        GameObject upgraded = Instantiate(_fireTurret, transform.position, transform.rotation);
+        Destroy(this.gameObject);
+    }
+
+    public void IceUpgrade()
+    {
+        GameObject upgraded = Instantiate(_iceTurret, transform.position, transform.rotation);
+        Destroy(this.gameObject);
+    }
 }

@@ -749,12 +749,12 @@ GameObject:
   - component: {fileID: 256927522307062115}
   - component: {fileID: 1209823429563617121}
   m_Layer: 5
-  m_Name: TurretKineticUpgradeUI (1)
+  m_Name: TurretKineticUpgradeUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1291616198356776354
 RectTransform:
   m_ObjectHideFlags: 0
@@ -984,7 +984,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7573919661463541188
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1453,12 +1453,12 @@ GameObject:
   - component: {fileID: 8544232237650512402}
   - component: {fileID: 840064992008224095}
   m_Layer: 5
-  m_Name: TurretLaserUpgradeUI (2)
+  m_Name: TurretLaserUpgradeUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5599589098292940215
 RectTransform:
   m_ObjectHideFlags: 0
