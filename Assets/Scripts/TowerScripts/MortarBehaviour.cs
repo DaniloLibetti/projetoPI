@@ -11,7 +11,10 @@ public class MortarBehaviour : MonoBehaviour
     private float _verticalShotForce = 700;
     [SerializeField]
     private float _horizontalShotForce = 200;
-
+    [SerializeField]
+    private float _fireRate;
+    
+    
 
     private void Start()
     {
@@ -26,6 +29,6 @@ public class MortarBehaviour : MonoBehaviour
     {
         GameObject shot = Instantiate(_mortarShot, new Vector3(transform.position.x, transform.position.y + 2, transform.position.z), Quaternion.identity);
         shot.GetComponent<Rigidbody>().AddForce(new Vector3(_horizontalShotForce, _verticalShotForce, 0));
-        Invoke("Shoot", 2);
+        Invoke("Shoot", _fireRate);
     }
 }

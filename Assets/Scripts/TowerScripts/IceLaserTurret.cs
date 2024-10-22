@@ -10,8 +10,8 @@ public class IceLaserTurret : MonoBehaviour
     private bool _useLaser = false;
     [SerializeField]
     private float _damageOverTime = 50;
-    [SerializeField]
-    private float _slowAmount = 0.5f;
+    //[SerializeField]
+    //private float _slowAmount = 0.5f;
     [SerializeField]
     private Transform _firePoint;
     [SerializeField]
@@ -146,13 +146,13 @@ public class IceLaserTurret : MonoBehaviour
 
     }
 
-    private void OnDisable()
+    /*private void OnDisable()
     {
-        if (_targetEnemy.gameObject.activeInHierarchy && _targetEnemy)
+        if (_targetEnemy.gameObject.activeInHierarchy && _targetEnemy != null)
         {
             _targetEnemyBehaviour._speed = -5f;
         }
-    }
+    }*/
 
     private void Shoot()
     {
