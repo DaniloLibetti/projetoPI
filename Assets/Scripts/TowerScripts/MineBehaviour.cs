@@ -10,7 +10,6 @@ public class MineBehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("KABOOM!");
 
         if (other.CompareTag("GroundEnemy"))
         { 

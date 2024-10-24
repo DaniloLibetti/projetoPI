@@ -13,6 +13,8 @@ public class AntiAirBehaviour2 : MonoBehaviour
     [SerializeField]
     private AntiAirHead _head;
     private float _minDist = Mathf.Infinity;
+    [SerializeField]
+    private bool _burst;
 
     void Start()
     {
@@ -42,7 +44,12 @@ public class AntiAirBehaviour2 : MonoBehaviour
                 if(_lockedEnemy != null && hitColliders[i].gameObject == _lockedEnemy)
                 {
                     _head._enemyLocked = _lockedEnemy;
-                    _head.Shoot();
+                    if (_burst)
+                    {
+                        StartCoroutine(Burst());
+                    }
+                    else
+                        _head.Shoot();
                     return;
                 }
                 else
@@ -58,16 +65,22 @@ public class AntiAirBehaviour2 : MonoBehaviour
             }
             _minDist = Mathf.Infinity;
             _head._enemyLocked = _lockedEnemy;
-            _head.Shoot();
+            if (_burst)
+            {
+                StartCoroutine(Burst());
+            }
+            else
+                _head.Shoot();
         }
     }
 
-    //void OnDrawGizmos()
-    //{
-    //    Gizmos.color = Color.red;
-    //    //Check that it is being run in Play Mode, so it doesn't try to draw this in Editor mode
-    //    if (m_Started)
-    //        //Draw a cube where the OverlapBox is (positioned where your GameObject is as well as a size)
-    //        Gizmos.DrawWireCube(new Vector3(transform.position.x + 20, transform.position.y + 10, transform.position.z), transform.localScale * 40);
-    //}
+    IEnumerator Burst()
+    {
+        yield return new WaitForSeconds(.2f);
+        _head.Shoot();
+        yield return new WaitForSeconds(.2f);
+        _head.Shoot();
+        yield return new WaitForSeconds(.2f);
+        _head.Shoot();
+    }
 }
