@@ -12,6 +12,8 @@ public class DroneBehaviour : MonoBehaviour
     private float _pingpongX = 1;
     private Vector3 _start;
     [SerializeField]
+    private float _damage;
+    [SerializeField]
     private Vector3 _target;
     [SerializeField]
     private Transform _drone;
@@ -56,6 +58,8 @@ public class DroneBehaviour : MonoBehaviour
         }
 
     }
+
+
 
     private IEnumerator DroneHeight()
     {
