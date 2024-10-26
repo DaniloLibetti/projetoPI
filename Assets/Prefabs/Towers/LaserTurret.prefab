@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2819294637383291698}
   - component: {fileID: 6571871821006209277}
   - component: {fileID: 4491181837612587629}
+  - component: {fileID: 3625577154861644114}
   m_Layer: 6
   m_Name: LaserTurret
   m_TagString: Turret
@@ -78,6 +79,24 @@ MonoBehaviour:
   _shootEffect: {fileID: 0}
   _enemy: []
   _lockedEnemy: {fileID: 0}
+--- !u!114 &3625577154861644114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602142994835611881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d68e0506ea9b9de4197748dbefc93732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _nextTurrent:
+  - {fileID: 6117202042622985420, guid: d674d5c01956e814d85acd5beaecfb6d, type: 3}
+  - {fileID: 1573776192976786612, guid: 47842b53f9aa83b4e8874098c654abea, type: 3}
+  _yPosition: 0
+  _zPosition: 0
+  _upgradeUiIndex: 2
 --- !u!1 &4626981666477066716
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,6 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c28421b59419d746bfee23478e02316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _CollectableMaterial: {fileID: 0}
   _health: 200
 --- !u!1 &8017888344864684152
 GameObject:

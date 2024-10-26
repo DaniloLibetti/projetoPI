@@ -42,6 +42,7 @@ public class EnemySpawner : MonoBehaviour
             if(groundEnemy != null)
             {
                 groundEnemy.transform.position = new Vector3(transform.position.x, _enemyHeight[0], transform.position.z);
+                groundEnemy.GetComponent<Health>()._health = 100;
                 groundEnemy.SetActive(true);
             }
             else
@@ -58,6 +59,7 @@ public class EnemySpawner : MonoBehaviour
             if (groundEnemy != null)
             {
                 groundEnemy.transform.position = new Vector3(transform.position.x, _enemyHeight[1], transform.position.z);
+                groundEnemy.GetComponent<Health>()._health = 100;
                 groundEnemy.SetActive(true);
             }
             else

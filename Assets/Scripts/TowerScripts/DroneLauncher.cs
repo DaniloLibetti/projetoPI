@@ -42,7 +42,7 @@ public class DroneLauncher : MonoBehaviour
 
     public IEnumerator Reactivate(GameObject drone)
     {
-        Debug.Log(drone.name);
+        
         drone.transform.position = new Vector3(transform.position.x, transform.position.y + 5, transform.position.z);
         yield return new WaitForSeconds(2);
         DroneBehaviour targets = drone.GetComponent<DroneBehaviour>();

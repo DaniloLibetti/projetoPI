@@ -20,13 +20,13 @@ public class CoinDrop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(_enemyHealth.GetComponent<Health>()._health <= 0)
+        if (_enemyHealth.GetComponent<Health>()._health <= 0)
         {
             DropCoin();
         }
     }
 
-    private void DropCoin()
+    public void DropCoin()
     {
         Vector3 position = transform.position;
         GameObject mat = Instantiate(_CollectableMaterial, position, Quaternion.identity);

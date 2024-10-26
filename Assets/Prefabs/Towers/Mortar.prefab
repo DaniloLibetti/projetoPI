@@ -243,10 +243,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d68e0506ea9b9de4197748dbefc93732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nextTurrent: {fileID: 114034946204345301, guid: 3a0909ace57474a4aa4238db51992ea0,
-    type: 3}
+  _nextTurrent:
+  - {fileID: 382277832755214021, guid: 051e46ab29901174592205a5c67dd66d, type: 3}
+  - {fileID: 114034946204345301, guid: 3a0909ace57474a4aa4238db51992ea0, type: 3}
   _yPosition: 1
   _zPosition: -10.14
+  _upgradeUiIndex: 3
 --- !u!114 &561382761736464414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,4 +261,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c28421b59419d746bfee23478e02316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _CollectableMaterial: {fileID: 0}
   _health: 200

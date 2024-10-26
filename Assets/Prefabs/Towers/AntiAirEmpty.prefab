@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 909667283384712647}
   - component: {fileID: 938997547126713959}
-  - component: {fileID: 5853195390513911443}
   - component: {fileID: 6730392339488067422}
+  - component: {fileID: 5498441386774956871}
   m_Layer: 6
   m_Name: AntiAirEmpty
   m_TagString: Turret
@@ -57,24 +57,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 48.281567, y: 53.009876, z: 33.22059}
   m_Center: {x: 18.505106, y: 10.49608, z: 0.53088}
---- !u!114 &5853195390513911443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 114034946204345301}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ed0e2e4e12d22643b82e31b4d192f98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemy: []
-  _lockedEnemy: {fileID: 0}
-  _minDist: Infinity
-  _head: {fileID: 7881149979402819338}
-  timer: 0
-  firerate: 2
 --- !u!114 &6730392339488067422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,6 +75,25 @@ MonoBehaviour:
   _timer: 0
   _lockedEnemy: {fileID: 0}
   _head: {fileID: 7881149979402819338}
+  _burst: 0
+--- !u!114 &5498441386774956871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114034946204345301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d68e0506ea9b9de4197748dbefc93732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _nextTurrent:
+  - {fileID: 4992518328582415795, guid: 5cb06f1e2663dec4390c8af6d536e9d6, type: 3}
+  - {fileID: 4901293213471972962, guid: 053e78fc07126ed42987856a742d0ea9, type: 3}
+  _yPosition: 0
+  _zPosition: 0
+  _upgradeUiIndex: 5
 --- !u!1 &1126908988559366582
 GameObject:
   m_ObjectHideFlags: 0
@@ -104,7 +105,6 @@ GameObject:
   - component: {fileID: 6894005330747822092}
   - component: {fileID: 1243292611576049852}
   - component: {fileID: 4332897184090432368}
-  - component: {fileID: 3896183142914632701}
   - component: {fileID: 3740686866283249687}
   - component: {fileID: 3521826305747945036}
   m_Layer: 6
@@ -179,24 +179,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3896183142914632701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1126908988559366582}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ed0e2e4e12d22643b82e31b4d192f98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemy: []
-  _lockedEnemy: {fileID: 0}
-  _minDist: Infinity
-  _head: {fileID: 7881149979402819338}
-  timer: 0
-  firerate: 2
 --- !u!114 &3740686866283249687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,6 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c28421b59419d746bfee23478e02316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _CollectableMaterial: {fileID: 0}
   _health: 200
 --- !u!65 &3521826305747945036
 BoxCollider:
@@ -334,7 +317,7 @@ MonoBehaviour:
   _verticalShotForce: 0
   _horizontalShotForce: 200
   _launchPos: {fileID: 8255379783402766579}
-  _behaviour: {fileID: 3896183142914632701}
+  _behaviour: {fileID: 0}
   _missles: []
 --- !u!114 &7112117432053877403
 MonoBehaviour:

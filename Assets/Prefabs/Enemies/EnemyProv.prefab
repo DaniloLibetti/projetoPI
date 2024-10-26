@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 1791797608210502223}
   - component: {fileID: 75477202696476458}
   - component: {fileID: -3366318051619017702}
-  - component: {fileID: -6879990289089183709}
   m_Layer: 7
   m_Name: EnemyProv
   m_TagString: GroundEnemy
@@ -123,6 +122,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c28421b59419d746bfee23478e02316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _CollectableMaterial: {fileID: 3592609193582990277, guid: 79c9b6940558df34ab805ba073fd301f,
+    type: 3}
   _health: 100
 --- !u!114 &75477202696476458
 MonoBehaviour:
@@ -172,19 +173,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-6879990289089183709
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3709516989972187314}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dde1f52d15e6e7245b18a4579fc4a77c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _CollectableMaterial: {fileID: 3592609193582990277, guid: 79c9b6940558df34ab805ba073fd301f,
-    type: 3}
-  _transform: {fileID: 1070449361811706791}
-  _enemyHealth: {fileID: 1791797608210502223}
