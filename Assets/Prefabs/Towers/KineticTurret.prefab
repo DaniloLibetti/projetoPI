@@ -4899,7 +4899,6 @@ GameObject:
   - component: {fileID: 8166099333688362962}
   - component: {fileID: 6738886301374710806}
   - component: {fileID: 6958948279296200512}
-  - component: {fileID: 8258876958077704615}
   m_Layer: 6
   m_Name: KineticTurret
   m_TagString: Turret
@@ -4943,7 +4942,7 @@ MonoBehaviour:
   _shootDistance: {fileID: 6958948279296200512}
   _ignoredLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 72
   _turretPivot: {fileID: 7836264144840967052}
   _firePoint: {fileID: 994304094391259022}
   _shootEffect: {fileID: 5682719727845957229}
@@ -4968,26 +4967,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.4322847, y: 2.8472428, z: 11.395478}
-  m_Center: {x: 0.06609273, y: 0.9236214, z: 4.7241974}
---- !u!114 &8258876958077704615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1236730228658608871}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d68e0506ea9b9de4197748dbefc93732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _nextTurrent:
-  - {fileID: 8962057174522675986, guid: bcd32bd03a63a2f488e6d7d28be96945, type: 3}
-  - {fileID: 8260401020453636563, guid: 7add7d9e834b2a54588feb98d700e5c6, type: 3}
-  _yPosition: 0
-  _zPosition: 0
-  _upgradeUiIndex: 1
+  m_Size: {x: 2.149217, y: 3.9554877, z: 13.074862}
+  m_Center: {x: 0.19394672, y: 0.3694989, z: 5.5638895}
 --- !u!1 &1773116569453369985
 GameObject:
   m_ObjectHideFlags: 0
@@ -5013,7 +4994,7 @@ Transform:
   m_GameObject: {fileID: 1773116569453369985}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.07, y: 0.02, z: 1.269}
+  m_LocalPosition: {x: -0.07, y: -1.574, z: 1.269}
   m_LocalScale: {x: 0.8375913, y: 2.2983503, z: 0.33333334}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5033,6 +5014,7 @@ GameObject:
   - component: {fileID: 413125947219127400}
   - component: {fileID: 5103788448881122581}
   - component: {fileID: 8687544388421625217}
+  - component: {fileID: 2726926908868079616}
   m_Layer: 6
   m_Name: BaseTurret
   m_TagString: Turret
@@ -5124,8 +5106,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 3.4321666, y: 1.8560208, z: 6.5164213}
+  m_Center: {x: -0.019571781, y: -0.34625322, z: 0.9405713}
 --- !u!114 &8687544388421625217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5140,6 +5122,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _CollectableMaterial: {fileID: 0}
   _health: 200
+--- !u!114 &2726926908868079616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4919886155591300906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d68e0506ea9b9de4197748dbefc93732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _nextTurrent:
+  - {fileID: 8962057174522675986, guid: bcd32bd03a63a2f488e6d7d28be96945, type: 3}
+  - {fileID: 8260401020453636563, guid: 7add7d9e834b2a54588feb98d700e5c6, type: 3}
+  _cost: 1e00000019000000
+  _yPosition: 0
+  _zPosition: 0
+  _upgradeUiIndex: 1
+  _toDestroy: {fileID: 1236730228658608871}
 --- !u!1 &6781196602002816258
 GameObject:
   m_ObjectHideFlags: 0
@@ -5242,7 +5244,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -5277,7 +5279,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 43753c5121f2d2e4da54b71281dfa073,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.69
+      value: -1.67
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 43753c5121f2d2e4da54b71281dfa073,
         type: 3}

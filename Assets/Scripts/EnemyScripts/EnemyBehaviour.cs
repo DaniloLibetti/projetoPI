@@ -15,6 +15,8 @@ public class EnemyBehaviour : MonoBehaviour
     private LayerMask _layerMask;
     private Vector3 _direction;
     public Vector3 velocity;
+    [SerializeField]
+    private Rigidbody _rB;
 
 
 
@@ -31,9 +33,15 @@ public class EnemyBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(_direction.x * _speed * Time.deltaTime, 0, 0);
+        //transform.Translate(_direction.x * _speed * Time.deltaTime, 0, 0);
+        //_rB.velocity = new Vector3(_direction.x * _speed * Time.deltaTime, 0, 0);
 
         //_speed = _startSpeed;
+    }
+
+    private void FixedUpdate()
+    {
+        _rB.velocity = new Vector3(_direction.x * _speed, 0, 0);
     }
 
 
@@ -52,14 +60,14 @@ public class EnemyBehaviour : MonoBehaviour
         {
             Health health = hitInfo.transform.gameObject.GetComponent<Health>();
 
-            if (health == null && (hitInfo.transform.position - transform.position).x <= 2)
-            {
-                _speed = -5;
-            }
+            //if (health == null && (hitInfo.transform.position - transform.position).x <= 2)
+            //{
+            //    //_speed = -5;
+            //}
             if (health != null && (hitInfo.transform.position - transform.position).x <= 2)
             {
                 health.ReceiveDamage(_damage);
-                _speed = 0;
+                //_speed = 0;
             }
 
         }

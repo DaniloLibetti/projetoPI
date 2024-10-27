@@ -55,6 +55,7 @@ public class FireLaserTurret : MonoBehaviour
                     _lineRenderer.enabled = false;
                     _laserHitParticle.Stop();
                     _laserHeadParticle.Stop();
+                    SetTarget();
                 }
             }
 

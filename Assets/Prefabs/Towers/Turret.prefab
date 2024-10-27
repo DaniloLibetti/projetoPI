@@ -43,8 +43,6 @@ GameObject:
   - component: {fileID: 6935137797977355055}
   - component: {fileID: 6807146002682717754}
   - component: {fileID: 6074739121124459750}
-  - component: {fileID: 8783152843092087177}
-  - component: {fileID: 9113292897764699462}
   m_Layer: 6
   m_Name: BaseTurret
   m_TagString: Turret
@@ -117,41 +115,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8783152843092087177
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5451643412133446849}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &9113292897764699462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5451643412133446849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c28421b59419d746bfee23478e02316, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _CollectableMaterial: {fileID: 0}
-  _health: 200
 --- !u!1 &7552807441882487248
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,6 +127,8 @@ GameObject:
   - component: {fileID: 2743740624383950596}
   - component: {fileID: 8607536866015731686}
   - component: {fileID: 8256884369700226911}
+  - component: {fileID: 4465696177390827023}
+  - component: {fileID: 345616347277976943}
   m_Layer: 6
   m_Name: TurretBarrel
   m_TagString: Turret
@@ -256,8 +221,42 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 3.845764, y: 3.4703221, z: 2.203773}
+  m_Center: {x: -0.22603616, y: -1.2351618, z: 0.27854168}
+--- !u!114 &4465696177390827023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7552807441882487248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c28421b59419d746bfee23478e02316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _CollectableMaterial: {fileID: 0}
+  _health: 200
+--- !u!114 &345616347277976943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7552807441882487248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d68e0506ea9b9de4197748dbefc93732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _nextTurrent:
+  - {fileID: 1602142994835611881, guid: 93ea7733862cd044db094983c29c5d1c, type: 3}
+  - {fileID: 1236730228658608871, guid: ec52bde1627315a40a850683611a7e7e, type: 3}
+  _cost: 140000000f000000
+  _yPosition: 0
+  _zPosition: 0
+  _upgradeUiIndex: 0
+  _toDestroy: {fileID: 8161812440809144716}
 --- !u!1 &8161812440809144716
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,7 +312,7 @@ MonoBehaviour:
   _shootDistance: {fileID: 6905206345739786692}
   _ignoredLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 72
   _turretPivot: {fileID: 3406987080132125888}
   _firePoint: {fileID: 1403785516650044850}
   _shootEffect: {fileID: 800908280759039251}
@@ -338,8 +337,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.4322847, y: 2.8472428, z: 11.395478}
-  m_Center: {x: 0.06609273, y: 0.9236214, z: 4.7241974}
+  m_Size: {x: 1.4322847, y: 2.8472428, z: 11.467795}
+  m_Center: {x: 0.06609273, y: 0.9236214, z: 4.7603574}
 --- !u!114 &1279537609713068944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,9 +354,11 @@ MonoBehaviour:
   _nextTurrent:
   - {fileID: 1602142994835611881, guid: 93ea7733862cd044db094983c29c5d1c, type: 3}
   - {fileID: 1236730228658608871, guid: ec52bde1627315a40a850683611a7e7e, type: 3}
+  _cost: 140000000f000000
   _yPosition: 0
   _zPosition: 0
   _upgradeUiIndex: 0
+  _toDestroy: {fileID: 0}
 --- !u!1001 &4344241175832783271
 PrefabInstance:
   m_ObjectHideFlags: 0

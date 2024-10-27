@@ -14,7 +14,7 @@ public class AntiAirHead : MonoBehaviour
     [SerializeField]
     private Transform _launchPos;
     [SerializeField]
-    private AntiAirBehaviour _behaviour;
+    private AntiAirBehaviour2 _behaviour;
     [SerializeField]
     private List<GameObject> _missles = new();
 

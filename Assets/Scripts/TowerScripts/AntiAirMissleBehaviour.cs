@@ -8,9 +8,11 @@ public class AntiAirMissleBehaviour : MonoBehaviour
     public Transform _lockedTarget;
     [SerializeField]
     private Rigidbody _rB;
-    public AntiAirBehaviour _behaviour;
+    public AntiAirBehaviour2 _behaviour;
     public AntiAirHead _head;
     public EnemyBehaviour enemy;
+    private float _minDist = Mathf.Infinity;
+    public LayerMask m_LayerMask;
 
     private void Start()
     {
@@ -54,14 +56,40 @@ public class AntiAirMissleBehaviour : MonoBehaviour
             other.GetComponent<Health>().ReceiveDamage(50);
             _head._enemyLocked = null;
             _behaviour._lockedEnemy = null;
-            _behaviour.RemoveInactive();
             this.gameObject.SetActive(false);
         }
     }
 
     private void NoTarget()
     {
-        transform.position = new Vector3(500, 500, 500);
-        this.gameObject.SetActive(false);
+        if (_lockedTarget == null || !_lockedTarget.gameObject.activeInHierarchy)
+        {
+            Collider[] hitColliders = Physics.OverlapBox(new Vector3(transform.position.x + 20, transform.position.y + 10, transform.position.z), transform.localScale * 40, Quaternion.identity, m_LayerMask);
+            int i = 0;
+
+            while (i < hitColliders.Length)
+            {
+                if (hitColliders.Length > 0)
+                {
+                    float dist = Vector3.Distance(hitColliders[i].transform.position, transform.position);
+                    if (dist < _minDist && hitColliders[i].gameObject.activeInHierarchy)
+                    {
+                        _lockedTarget = hitColliders[i].transform;
+                        enemy = _lockedTarget.GetComponent<EnemyBehaviour>();
+                        _minDist = dist;
+                    }
+                    i++;
+                }
+                else
+                {
+                    transform.position = new Vector3(500, 500, 500);
+                    this.gameObject.SetActive(false);
+                }
+            }
+            _minDist = Mathf.Infinity;
+            Invoke("NoTarget", 1);
+        }
+        else
+            return;
     }
 }

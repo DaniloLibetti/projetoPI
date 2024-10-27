@@ -17,15 +17,24 @@ public class TowerInstantiations : MonoBehaviour
     private int _upgradeUiIndex;
 
     public GameObject[] _upgradePrefabs;
+    [SerializeField]
+    private int[] _cost;
 
     public TextMeshProUGUI _materialCounterText;
+    [SerializeField]
+    private TextMeshProUGUI _shhipMaterialCounter;
 
     public int _materialAmount;
+    private int _shipMaterial;
 
     private bool _turretUiOnOff = false;
+    public bool _isNearShip = false;
 
     private Vector3 _oldTurretPosition;
     private Quaternion _oldTurretRotation;
+
+    [SerializeField]
+    private WinLoseManager _winLoseManager;
 
     private void Start()
     {
@@ -42,6 +51,13 @@ public class TowerInstantiations : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             UpgradeTurret();
+            if(_isNearShip && _materialAmount >= 10)
+            {
+                _materialAmount -= 10;
+                _shipMaterial += 10;
+                _winLoseManager._shipMaterials += 10;
+                UpdateMaterialCounter();
+            }
         }
     }
 
@@ -53,24 +69,33 @@ public class TowerInstantiations : MonoBehaviour
 
         if (Physics.Raycast(shootRay, out RaycastHit hitInfo, 5))
         {
+            Debug.Log(hitInfo.collider.name);
             UpgradeTowers upgrade = hitInfo.transform.GetComponent<UpgradeTowers>();
-            Debug.Log(upgrade.gameObject.name);
-            if (upgrade)
+            if(upgrade != null)
             {
-                _turretsUpgradeUi[upgrade._upgradeUiIndex].SetActive(true);
-                _upgradeUiIndex = upgrade._upgradeUiIndex;
-                _oldTurretPosition = hitInfo.transform.position;
-                _oldTurretRotation = hitInfo.transform.rotation;
-                _upgradePrefabs = upgrade._nextTurrent;
-                upgrade.Upgrade();
+                if (upgrade)
+                {
+                    _turretsUpgradeUi[upgrade._upgradeUiIndex].SetActive(true);
+                    _upgradeUiIndex = upgrade._upgradeUiIndex;
+                    _oldTurretPosition = hitInfo.transform.position;
+                    _oldTurretRotation = hitInfo.transform.rotation;
+                    _upgradePrefabs = upgrade._nextTurrent;
+                    _cost = upgrade._cost;
+                    upgrade.Upgrade();
+                }
             }
         }
     }
 
     public void ChooseUpgrade(int nextTurret)
     {
-        Instantiate(_upgradePrefabs[nextTurret], _oldTurretPosition, _oldTurretRotation);
-        _turretsUpgradeUi[_upgradeUiIndex].SetActive(false);
+        if (_cost[nextTurret] <= _materialAmount)
+        {
+            Instantiate(_upgradePrefabs[nextTurret], _oldTurretPosition, _oldTurretRotation);
+            _turretsUpgradeUi[_upgradeUiIndex].SetActive(false);
+        }
+        else
+            return;
     }
 
     public void MortarInstatiate()
@@ -112,6 +137,7 @@ public class TowerInstantiations : MonoBehaviour
     public void UpdateMaterialCounter()
     {
         _materialCounterText.text = "Materials: " + _materialAmount;
+        _shhipMaterialCounter.text = "Ship Materials: " + _shipMaterial + "/100";
     }
 
 }

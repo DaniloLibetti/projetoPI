@@ -8,8 +8,7 @@ public class AntiAirBehaviour2 : MonoBehaviour
     public LayerMask m_LayerMask;
     [SerializeField]
     private float _timer;
-    [SerializeField]
-    private Transform _lockedEnemy;
+    public Transform _lockedEnemy;
     [SerializeField]
     private AntiAirHead _head;
     private float _minDist = Mathf.Infinity;

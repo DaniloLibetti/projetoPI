@@ -15,6 +15,7 @@ public class WinLoseManager : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI _winLoseText;
     private bool _startStopTimer = true;
+    public int _shipMaterials;
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +40,7 @@ public class WinLoseManager : MonoBehaviour
             _startStopTimer = false;
             StartCoroutine(YouLose());
         }
-        if(_timer >= 300)
+        if(_shipMaterials >= 100)
         {
             _startStopTimer = false;
             StartCoroutine(YouWin());

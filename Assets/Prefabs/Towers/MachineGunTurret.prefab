@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 3174866472060610825}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.027, y: -0.058631625, z: 1.26}
+  m_LocalPosition: {x: -0.027, y: -1.622, z: 1.26}
   m_LocalScale: {x: 0.8375913, y: 2.2983503, z: 0.33333334}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -136,8 +136,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 4.6697216, y: 1.9095664, z: 6.9014783}
+  m_Center: {x: -0.034357548, y: -0.454783, z: 0.84866405}
 --- !u!114 &8621483641677097526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,13 +200,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9993d0afb49ed40b70726ea1831e60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fireRate: 10
+  _fireRate: 1
   _damage: 25
   _maxShootDistance: 15
   _shootDistance: {fileID: 3711557777499396855}
   _ignoredLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 72
   _turretPivot: {fileID: 8913974878494136630}
   _firePoint: {fileID: 248300014269331775}
   _shootEffect: {fileID: 895988261047417366}
@@ -231,8 +231,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.4322847, y: 2.8472428, z: 11.395478}
-  m_Center: {x: 0.06609273, y: 0.9236214, z: 4.7241974}
+  m_Size: {x: 2.3734322, y: 4.38166, z: 11.395477}
+  m_Center: {x: -0.07601839, y: 0.15641284, z: 4.7241974}
 --- !u!1 &8342591754817624144
 GameObject:
   m_ObjectHideFlags: 0
@@ -5132,7 +5132,6 @@ GameObject:
   - component: {fileID: 8913974878494136630}
   - component: {fileID: 3666201522036645165}
   - component: {fileID: 9111879437017018179}
-  - component: {fileID: 177515582376990957}
   m_Layer: 6
   m_Name: TurretBarrel
   m_TagString: Turret
@@ -5206,27 +5205,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &177515582376990957
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9000150747958350172}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &6417736621310862760
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5258,7 +5236,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 77a6239af1908cb4ebeb4cef8fef4d22,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.77
+      value: -1.7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 77a6239af1908cb4ebeb4cef8fef4d22,
         type: 3}

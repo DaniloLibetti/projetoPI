@@ -11,7 +11,7 @@ public class Collectable : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             TowerInstantiations updateMaterialText = other.GetComponent<TowerInstantiations>();
-            updateMaterialText._materialAmount += 3;
+            updateMaterialText._materialAmount += 10;
             updateMaterialText.UpdateMaterialCounter();
             Destroy(this.gameObject);
         }

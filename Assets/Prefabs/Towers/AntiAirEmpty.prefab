@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 909667283384712647}
   - component: {fileID: 938997547126713959}
   - component: {fileID: 6730392339488067422}
-  - component: {fileID: 5498441386774956871}
+  - component: {fileID: 8738015124678791538}
   m_Layer: 6
   m_Name: AntiAirEmpty
   m_TagString: Turret
@@ -77,24 +77,27 @@ MonoBehaviour:
   _lockedEnemy: {fileID: 0}
   _head: {fileID: 7881149979402819338}
   _burst: 0
---- !u!114 &5498441386774956871
-MonoBehaviour:
+--- !u!65 &8738015124678791538
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 114034946204345301}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d68e0506ea9b9de4197748dbefc93732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _nextTurrent:
-  - {fileID: 4992518328582415795, guid: 5cb06f1e2663dec4390c8af6d536e9d6, type: 3}
-  - {fileID: 4901293213471972962, guid: 053e78fc07126ed42987856a742d0ea9, type: 3}
-  _yPosition: 0
-  _zPosition: 0
-  _upgradeUiIndex: 5
+  serializedVersion: 3
+  m_Size: {x: 1.1, y: 1.1, z: 1.1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1126908988559366582
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,6 +111,7 @@ GameObject:
   - component: {fileID: 4332897184090432368}
   - component: {fileID: 3740686866283249687}
   - component: {fileID: 3521826305747945036}
+  - component: {fileID: 2205344361883651584}
   m_Layer: 6
   m_Name: AntiAir
   m_TagString: Turret
@@ -213,8 +217,28 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0.00000023841858, z: 0}
+  m_Size: {x: 2.4952855, y: 1.3072816, z: 2.2876596}
+  m_Center: {x: -0.10193038, y: -0.15363954, z: -0.010448933}
+--- !u!114 &2205344361883651584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126908988559366582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d68e0506ea9b9de4197748dbefc93732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _nextTurrent:
+  - {fileID: 4992518328582415795, guid: 5cb06f1e2663dec4390c8af6d536e9d6, type: 3}
+  - {fileID: 4901293213471972962, guid: 053e78fc07126ed42987856a742d0ea9, type: 3}
+  _cost: 1e00000019000000
+  _yPosition: 0
+  _zPosition: 0
+  _upgradeUiIndex: 5
+  _toDestroy: {fileID: 114034946204345301}
 --- !u!1 &3592870429607202427
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,7 +342,7 @@ MonoBehaviour:
   _verticalShotForce: 0
   _horizontalShotForce: 200
   _launchPos: {fileID: 8255379783402766579}
-  _behaviour: {fileID: 0}
+  _behaviour: {fileID: 6730392339488067422}
   _missles: []
 --- !u!114 &7112117432053877403
 MonoBehaviour:
@@ -400,7 +424,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 4b97873dc07b6b8419db95dba64321f0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.02
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4b97873dc07b6b8419db95dba64321f0,
         type: 3}

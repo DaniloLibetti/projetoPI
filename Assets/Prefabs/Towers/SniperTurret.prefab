@@ -104,8 +104,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 5.05466, y: 1.8557036, z: 8.822145}
+  m_Center: {x: -0.18605852, y: -0.4278512, z: 1.525404}
 --- !u!114 &7241093492744132130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,7 +222,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -251,7 +251,7 @@ Transform:
   m_GameObject: {fileID: 5447639076685374479}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.04, y: 0, z: 1.869}
+  m_LocalPosition: {x: -0.04, y: -1.57, z: 1.869}
   m_LocalScale: {x: 0.8375913, y: 2.2983503, z: 0.33333334}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5200,7 +5200,7 @@ MonoBehaviour:
   _shootDistance: {fileID: 6380155386117373176}
   _ignoredLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 72
   _turretPivot: {fileID: 2462049583805447788}
   _firePoint: {fileID: 8438077541960062399}
   _shootEffect: {fileID: 5862657556426809647}
@@ -5225,8 +5225,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.4322847, y: 2.8472428, z: 26.622017}
-  m_Center: {x: 0.06609273, y: 0.9236214, z: 12.337465}
+  m_Size: {x: 2.3946257, y: 4.223791, z: 26.622017}
+  m_Center: {x: -0.09863621, y: 0.23534727, z: 12.337465}
 --- !u!1001 &5015714836708002790
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5258,7 +5258,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 1d0b0e29c2c5cda429d8b201341639c8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.7
+      value: -1.661
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1d0b0e29c2c5cda429d8b201341639c8,
         type: 3}

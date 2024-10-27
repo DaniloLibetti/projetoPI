@@ -142,9 +142,11 @@ MonoBehaviour:
   _nextTurrent:
   - {fileID: 8791860283199564763, guid: 2a1c496d5cc2bee43b242bcd1460f830, type: 3}
   - {fileID: 4055774784236200371, guid: b37e2d67cf5ee1943bd8fa0a3febea29, type: 3}
+  _cost: 1e00000019000000
   _yPosition: 1
   _zPosition: -10.14
   _upgradeUiIndex: 4
+  _toDestroy: {fileID: 382277832755214021}
 --- !u!114 &4383949522294312092
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2819294637383291698}
   - component: {fileID: 6571871821006209277}
   - component: {fileID: 4491181837612587629}
-  - component: {fileID: 3625577154861644114}
   m_Layer: 6
   m_Name: LaserTurret
   m_TagString: Turret
@@ -80,24 +79,6 @@ MonoBehaviour:
   _shootEffect: {fileID: 0}
   _enemy: []
   _lockedEnemy: {fileID: 0}
---- !u!114 &3625577154861644114
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1602142994835611881}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d68e0506ea9b9de4197748dbefc93732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _nextTurrent:
-  - {fileID: 6117202042622985420, guid: d674d5c01956e814d85acd5beaecfb6d, type: 3}
-  - {fileID: 1573776192976786612, guid: 47842b53f9aa83b4e8874098c654abea, type: 3}
-  _yPosition: 0
-  _zPosition: 0
-  _upgradeUiIndex: 2
 --- !u!1 &4626981666477066716
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,6 +92,7 @@ GameObject:
   - component: {fileID: 6819295711476607902}
   - component: {fileID: 6439262268234223254}
   - component: {fileID: 6323753698009897350}
+  - component: {fileID: 6293935016287617411}
   m_Layer: 6
   m_Name: BaseTurret
   m_TagString: Turret
@@ -127,7 +109,7 @@ Transform:
   m_GameObject: {fileID: 4626981666477066716}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.046, z: 0}
+  m_LocalPosition: {x: 0, y: -0.636, z: 0}
   m_LocalScale: {x: 0.57573, y: 1.4326518, z: 0.57573}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -202,8 +184,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 6.3487334, y: 1, z: 5.0175014}
+  m_Center: {x: 0.7216973, y: 0, z: 0.0568721}
 --- !u!114 &6323753698009897350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,6 +200,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _CollectableMaterial: {fileID: 0}
   _health: 200
+--- !u!114 &6293935016287617411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4626981666477066716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d68e0506ea9b9de4197748dbefc93732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _nextTurrent:
+  - {fileID: 6117202042622985420, guid: d674d5c01956e814d85acd5beaecfb6d, type: 3}
+  - {fileID: 1573776192976786612, guid: 47842b53f9aa83b4e8874098c654abea, type: 3}
+  _cost: 1e00000019000000
+  _yPosition: 0
+  _zPosition: 0
+  _upgradeUiIndex: 2
+  _toDestroy: {fileID: 1602142994835611881}
 --- !u!1 &8017888344864684152
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,7 +248,7 @@ Transform:
   m_GameObject: {fileID: 8017888344864684152}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 1.026, z: 0}
+  m_LocalPosition: {x: 0, y: 0.056, z: 0}
   m_LocalScale: {x: 1.709918, y: 0.5906547, z: 0.57573}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -386,7 +388,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 34149f57d1e1994438917a70a84a0d63,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.72
+      value: -1.67
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 34149f57d1e1994438917a70a84a0d63,
         type: 3}
