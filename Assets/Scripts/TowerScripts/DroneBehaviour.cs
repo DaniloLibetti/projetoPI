@@ -38,7 +38,6 @@ public class DroneBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _currentTarget = _target1;
         _start = this.transform.position;
         StartCoroutine(DroneHeight());
     }
@@ -52,23 +51,23 @@ public class DroneBehaviour : MonoBehaviour
             {
                 _pingpongHeight = _pingpongHeight == 0 ? 1 : 0;
             }
-            if (transform.position.x == _start.x || transform.position.x == _start.x - 10)
+            if (transform.position.x == _start.x + 10 || transform.position.x == _start.x - 10)
             {
                 _pingpongX = _pingpongX == 0 ? 1 : 0;
             }
             _currentHeight = Mathf.MoveTowards(_currentHeight, _pingpongHeight, 1f * Time.deltaTime);
-            _currentX = Mathf.PingPong(.1f * Time.time, 1);
+            _currentX = Mathf.MoveTowards(_currentX, _pingpongX, .15f * Time.deltaTime);
             this.transform.position = Vector3.Lerp(new Vector3(transform.position.x, 10, _start.z), new Vector3(transform.position.x, 12, _start.z), _idleCurve.Evaluate(_currentHeight));
             this.transform.position = Vector3.Lerp(new Vector3(_start.x + _t, transform.position.y, _start.z), new Vector3(_start.x - 10, transform.position.y, _start.z), _idleCurve.Evaluate(_currentX));
-            if(transform.position.x <= _start.x - 5 && _firstRound == false)
+            if(transform.position.x <= _start.x - 10 && _firstRound == false)
             {
                 _t = 10;
                 _firstRound = true;
             }
         }
-        else if(_attack == true && (_lockedEnemy != null && _lockedEnemy.gameObject.activeInHierarchy))
+        else if(_attack == true && _lockedEnemy != null && _lockedEnemy.gameObject.activeInHierarchy)
         {
-            _attackSpeed = Mathf.MoveTowards(0, 1, 5f * Time.deltaTime);
+            _attackSpeed = Mathf.MoveTowards(0, 1, 4f * Time.deltaTime);
             transform.position = Vector3.Lerp(transform.position, _lockedEnemy.position, _attackCurve.Evaluate(_attackSpeed));
         }
     }
@@ -127,6 +126,7 @@ public class DroneBehaviour : MonoBehaviour
             yield return null;
         }
         _topHeight = true;
+        _currentX = 0;
         _t = 0;
         yield return null;
     }
@@ -138,7 +138,10 @@ public class DroneBehaviour : MonoBehaviour
             other.GetComponent<Health>().ReceiveDamage(70);
             _lockedEnemy = null;
             _attack = false;
-            _launcher.Revive(this.gameObject);
+            if (_launcher.isActiveAndEnabled)
+            {
+                _launcher.Revive(this.gameObject);
+            }
             this.gameObject.SetActive(false);
         }
     }

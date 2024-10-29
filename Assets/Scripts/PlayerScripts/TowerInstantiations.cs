@@ -69,7 +69,6 @@ public class TowerInstantiations : MonoBehaviour
 
         if (Physics.Raycast(shootRay, out RaycastHit hitInfo, 5))
         {
-            Debug.Log(hitInfo.collider.name);
             UpgradeTowers upgrade = hitInfo.transform.GetComponent<UpgradeTowers>();
             if(upgrade != null)
             {
