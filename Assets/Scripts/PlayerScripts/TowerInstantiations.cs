@@ -45,8 +45,8 @@ public class TowerInstantiations : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.R) && !_isNearShip)
         {
-            _turretChoiceUi.SetActive(!_turretUiOnOff);
             _turretUiOnOff = !_turretUiOnOff;
+            _turretChoiceUi.SetActive(_turretUiOnOff);
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -111,6 +111,7 @@ public class TowerInstantiations : MonoBehaviour
             _turretChoiceUi.gameObject.SetActive(false);
             _materialAmount -= 10;
             UpdateMaterialCounter();
+            _turretUiOnOff = false;
         }
     }
 
@@ -123,6 +124,7 @@ public class TowerInstantiations : MonoBehaviour
             _turretChoiceUi.gameObject.SetActive(false);
             _materialAmount -= 10;
             UpdateMaterialCounter();
+            _turretUiOnOff = false;
         }
     }
 
@@ -135,6 +137,7 @@ public class TowerInstantiations : MonoBehaviour
             _turretChoiceUi.gameObject.SetActive(false);
             _materialAmount -= 10;
             UpdateMaterialCounter();
+            _turretUiOnOff = false;
         }
     }
 
