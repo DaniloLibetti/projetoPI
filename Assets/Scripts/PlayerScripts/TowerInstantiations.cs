@@ -43,20 +43,23 @@ public class TowerInstantiations : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.R))
+        if (Input.GetKeyUp(KeyCode.R) && !_isNearShip)
         {
             _turretChoiceUi.SetActive(!_turretUiOnOff);
             _turretUiOnOff = !_turretUiOnOff;
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
-            UpgradeTurret();
             if(_isNearShip && _materialAmount >= 10)
             {
                 _materialAmount -= 10;
                 _shipMaterial += 10;
                 _winLoseManager._shipMaterials += 10;
                 UpdateMaterialCounter();
+            }
+            else if(!_isNearShip && _materialAmount >= 10)
+            {
+                UpgradeTurret();
             }
         }
     }
@@ -92,6 +95,8 @@ public class TowerInstantiations : MonoBehaviour
         {
             Instantiate(_upgradePrefabs[nextTurret], _oldTurretPosition, _oldTurretRotation);
             _turretsUpgradeUi[_upgradeUiIndex].SetActive(false);
+            _materialAmount -= 10;
+            UpdateMaterialCounter();
         }
         else
             return;
