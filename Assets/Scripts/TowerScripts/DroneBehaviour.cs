@@ -51,7 +51,7 @@ public class DroneBehaviour : MonoBehaviour
             {
                 _pingpongHeight = _pingpongHeight == 0 ? 1 : 0;
             }
-            if (transform.position.x == _start.x + 10 || transform.position.x == _start.x - 10)
+            if (transform.position.x >= _start.x + 9.99f || transform.position.x <= _start.x - 10)
             {
                 _pingpongX = _pingpongX == 0 ? 1 : 0;
             }
