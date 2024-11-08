@@ -12,7 +12,8 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private List<GameObject> _flying = new();
 
-    // Start is called before the first frame update
+    // Primeira onda devera ser apenas um inimgo da direita, segunda um da direita e outro da esquerda
+    //Ondas subsequentes deverão iniciar com 5 inimigos de cada lado e depois onda anterior * 2
     void Start()
     {
         for (int i = 0; i < 10; i++)
