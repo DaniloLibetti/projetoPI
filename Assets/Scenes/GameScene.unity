@@ -1568,6 +1568,8 @@ MonoBehaviour:
   - {fileID: 3418980292504013615, guid: 425643cb13a4b2641a132c2657bf1c67, type: 3}
   _ground: []
   _flying: []
+  _time: 25
+  _enemyCount: 10
 --- !u!1 &419048156
 GameObject:
   m_ObjectHideFlags: 0
@@ -3298,6 +3300,8 @@ MonoBehaviour:
   - {fileID: 3418980292504013615, guid: 425643cb13a4b2641a132c2657bf1c67, type: 3}
   _ground: []
   _flying: []
+  _time: 25
+  _enemyCount: 10
 --- !u!1001 &917977698
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7196,7 +7200,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2105074686}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 32c7b7f5580cf1942853af7b72a76ce2, type: 3}
   m_Name: 
@@ -7206,6 +7210,8 @@ MonoBehaviour:
   - {fileID: 3418980292504013615, guid: 425643cb13a4b2641a132c2657bf1c67, type: 3}
   _ground: []
   _flying: []
+  _time: 25
+  _enemyCount: 10
 --- !u!4 &2105074688
 Transform:
   m_ObjectHideFlags: 0
