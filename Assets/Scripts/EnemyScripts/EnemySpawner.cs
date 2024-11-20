@@ -11,7 +11,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private List<GameObject> _flying = new();
     [SerializeField]
-    private float _time = 5f;
+    private float _time = 25f;
     [SerializeField]
     private int _enemyCount = 10;
 

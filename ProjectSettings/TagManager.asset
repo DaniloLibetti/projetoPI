@@ -10,6 +10,7 @@ TagManager:
   - AirEnemy
   - GroundEnemy
   - Turret
+  - Instantiation
   layers:
   - Default
   - TransparentFX

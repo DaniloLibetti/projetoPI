@@ -14,6 +14,7 @@ public class TowerInstantiations : MonoBehaviour
     private GameObject _turretChoiceUi;
 
     public GameObject[] _turretsUpgradeUi;
+    public bool _canInstantiate = true;
     private int _upgradeUiIndex;
 
     public GameObject[] _upgradePrefabs;
@@ -35,6 +36,8 @@ public class TowerInstantiations : MonoBehaviour
 
     [SerializeField]
     private WinLoseManager _winLoseManager;
+    [SerializeField]
+    private GameObject _instantiationCube;
 
     private void Start()
     {
@@ -47,6 +50,7 @@ public class TowerInstantiations : MonoBehaviour
         {
             _turretUiOnOff = !_turretUiOnOff;
             _turretChoiceUi.SetActive(_turretUiOnOff);
+            _instantiationCube.SetActive(_turretUiOnOff);
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -104,40 +108,42 @@ public class TowerInstantiations : MonoBehaviour
 
     public void MortarInstatiate()
     {
-        
-        if(_materialAmount >= 10)
+        if(_materialAmount >= 10 && _canInstantiate == true)
         {
             Instantiate(_turrents[0], new Vector3(_instantiationTarget.position.x, -4.366f, _instantiationTarget.position.z), transform.rotation);
             _turretChoiceUi.gameObject.SetActive(false);
             _materialAmount -= 10;
             UpdateMaterialCounter();
             _turretUiOnOff = false;
+            _instantiationCube.SetActive(false);
         }
     }
 
     public void TurretInstantiate()
     {
         
-        if (_materialAmount >= 10)
+        if (_materialAmount >= 10 && _canInstantiate == true)
         {
             Instantiate(_turrents[1], new Vector3(_instantiationTarget.position.x, -4.18f, _instantiationTarget.position.z), _instantiationTarget.rotation);
             _turretChoiceUi.gameObject.SetActive(false);
             _materialAmount -= 10;
             UpdateMaterialCounter();
             _turretUiOnOff = false;
+            _instantiationCube.SetActive(false);
         }
     }
 
     public void BarrierInstantiate()
     {
         
-        if (_materialAmount >= 10)
+        if (_materialAmount >= 10 && _canInstantiate == true)
         {
             Instantiate(_turrents[2], new Vector3(_instantiationTarget.position.x, -4.18f, _instantiationTarget.position.z), Quaternion.Euler(0, 0, 0));
             _turretChoiceUi.gameObject.SetActive(false);
             _materialAmount -= 10;
             UpdateMaterialCounter();
             _turretUiOnOff = false;
+            _instantiationCube.SetActive(false);
         }
     }
 
@@ -146,5 +152,4 @@ public class TowerInstantiations : MonoBehaviour
         _materialCounterText.text = "Materials: " + _materialAmount;
         _shhipMaterialCounter.text = "Ship Materials: " + _shipMaterial + "/100";
     }
-
 }
