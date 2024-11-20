@@ -6,16 +6,20 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField]
     private GameObject[] _enemies;
-    private float[] _enemyHeight = {-3.88f, 5f};
     [SerializeField]
     private List<GameObject> _ground = new();
     [SerializeField]
     private List<GameObject> _flying = new();
     [SerializeField]
-    private float _time = 25f;
-    private int _leftRightSpawn = 250;
+    private float _time = 5f;
     [SerializeField]
     private int _enemyCount = 10;
+
+    private float[] _enemyHeight = {-3.88f, 5f};
+    private int _leftRightSpawn = 250;
+    private float mintime = 1;
+    private float maxtime = 2;
+    private bool _changesides;
 
     // Primeira onda devera ser apenas um inimgo da direita, segunda um da direita e outro da esquerda
     //Ondas subsequentes deverão iniciar com 5 inimigos de cada lado e depois onda anterior * 2
@@ -47,18 +51,28 @@ public class EnemySpawner : MonoBehaviour
 
     private void Spawn()
     {
-        for(int i = 0; i < _enemyCount; i++)
+        for(int i = 0; i <= _enemyCount; i++)
         {
-            if(i == ((_enemyCount / 2) - 1))
+            if(_changesides == true)
             {
                 _leftRightSpawn = -250;
+                float timer = Random.Range(mintime, maxtime);
+                StartCoroutine(SpawnGround(timer, _leftRightSpawn));
+                StartCoroutine(SpawnAir(timer, _leftRightSpawn));
             }
-            float timer = Random.Range(4, 8);
-            StartCoroutine(SpawnGround(timer, _leftRightSpawn));
-            StartCoroutine(SpawnAir(timer, _leftRightSpawn));
+            else
+            {
+                _leftRightSpawn = 250;
+                float timer = Random.Range(mintime, maxtime);
+                StartCoroutine(SpawnGround(timer, _leftRightSpawn));
+                StartCoroutine(SpawnAir(timer, _leftRightSpawn));
+            }
+            mintime *= 1.2f;
+            maxtime *= 1.2f;
+            _changesides = !_changesides;
         }
         _enemyCount *= 2;
-        _leftRightSpawn = 250;
+        //_leftRightSpawn = 250;
     }
 
     IEnumerator SpawnGround(float waitTime, int side)
@@ -86,13 +100,13 @@ public class EnemySpawner : MonoBehaviour
         GameObject AirEnemy = GetFlyingEnemies();
         if (AirEnemy != null)
         {
-            AirEnemy.transform.position = new Vector3(_leftRightSpawn, _enemyHeight[1], transform.position.z);
+            AirEnemy.transform.position = new Vector3(side, _enemyHeight[1], transform.position.z);
             AirEnemy.GetComponent<Health>()._health = 100;
             AirEnemy.SetActive(true);
         }
         else
         {
-            GameObject enemy = Instantiate(_enemies[1], new Vector3(_leftRightSpawn, _enemyHeight[1], transform.position.z), Quaternion.identity);
+            GameObject enemy = Instantiate(_enemies[1], new Vector3(side, _enemyHeight[1], transform.position.z), Quaternion.identity);
             enemy.SetActive(false);
             _flying.Add(enemy);
             StartCoroutine(SpawnAir(waitTime, side));

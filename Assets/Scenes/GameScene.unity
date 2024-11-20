@@ -7754,7 +7754,7 @@ MonoBehaviour:
   - {fileID: 3418980292504013615, guid: 425643cb13a4b2641a132c2657bf1c67, type: 3}
   _ground: []
   _flying: []
-  _time: 25
+  _time: 5
   _enemyCount: 10
 --- !u!4 &2105074688
 Transform:
