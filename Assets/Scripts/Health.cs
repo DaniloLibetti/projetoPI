@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
+    public Image healthBar;
+
     [SerializeField]
     private GameObject _CollectableMaterial;
 
@@ -14,6 +17,8 @@ public class Health : MonoBehaviour
     public void ReceiveDamage(float amount)
     {
         _health -= amount;
+        healthBar.fillAmount = _health / 1000f;
+
         
         if(_health <= 0 && transform.parent)
         {
