@@ -314,7 +314,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Materials: '
+  m_text: 'Materiais: '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 790d01c7debe8f743bea4cfa9f53b1fd, type: 2}
   m_sharedMaterial: {fileID: 4796604602752853385, guid: 790d01c7debe8f743bea4cfa9f53b1fd,
@@ -4349,9 +4349,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Ship Materials
-
-'
+  m_text: 'Materiais da nave:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 790d01c7debe8f743bea4cfa9f53b1fd, type: 2}
   m_sharedMaterial: {fileID: 4796604602752853385, guid: 790d01c7debe8f743bea4cfa9f53b1fd,
@@ -8679,6 +8677,23 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 108597916664475251, guid: a33d3ed8afd839a48ac679569ea21de0,
+        type: 3}
+      propertyPath: m_text
+      value: "Laser de Fogo:\n-dano: alto\n-projetil: continuo\n-Cadencia: continua\n\n-pre\xE7o:
+        10 materiais"
+      objectReference: {fileID: 0}
+    - target: {fileID: 118121805122900136, guid: a33d3ed8afd839a48ac679569ea21de0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 206039952164761720, guid: a33d3ed8afd839a48ac679569ea21de0,
+        type: 3}
+      propertyPath: m_text
+      value: "Drones:\n-dano: alto\n-projetil: est\xE1tico\n-Cadencia: lenta\n-explode
+        em contato\n-pre\xE7o: 10 materiais"
+      objectReference: {fileID: 0}
     - target: {fileID: 483230529536977343, guid: a33d3ed8afd839a48ac679569ea21de0,
         type: 3}
       propertyPath: m_IsActive
@@ -8724,6 +8739,12 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1233740998154651395, guid: a33d3ed8afd839a48ac679569ea21de0,
+        type: 3}
+      propertyPath: m_text
+      value: "Torreta:\n-Dano: m\xE9dio\n-Projetil: r\xE1pido\n-Cadencia: media\n\n-pre\xE7o:
+        10 materiais"
+      objectReference: {fileID: 0}
     - target: {fileID: 1343121110257783236, guid: a33d3ed8afd839a48ac679569ea21de0,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -8764,6 +8785,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1680157953559134804, guid: a33d3ed8afd839a48ac679569ea21de0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1768448102536259902, guid: a33d3ed8afd839a48ac679569ea21de0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1771360222901494473, guid: a33d3ed8afd839a48ac679569ea21de0,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -8804,6 +8835,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1846435005339957974, guid: a33d3ed8afd839a48ac679569ea21de0,
+        type: 3}
+      propertyPath: m_text
+      value: "Laser:\n-dano: alto\n-projetil: m\xE9dio\n-Cadencia: m\xE9dia\n\n-pre\xE7o:
+        10 materiais"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805364693034653749, guid: a33d3ed8afd839a48ac679569ea21de0,
+        type: 3}
+      propertyPath: m_text
+      value: "Barreira:\n-Para inimigos\n-Durabilidade media\n\n\n-pre\xE7o: 10 materiais"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2857109319552552433, guid: a33d3ed8afd839a48ac679569ea21de0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2884490815129019410, guid: a33d3ed8afd839a48ac679569ea21de0,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -8878,6 +8925,18 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3061024181280568830, guid: a33d3ed8afd839a48ac679569ea21de0,
+        type: 3}
+      propertyPath: m_text
+      value: "Cin\xE9tica:\n-dano: alto\n-projetil: rapido\n-Cadencia: rapida\n\n-pre\xE7o:
+        10 materiais"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3223744745374987458, guid: a33d3ed8afd839a48ac679569ea21de0,
+        type: 3}
+      propertyPath: m_text
+      value: "Morteiro de fogo:\n-dano: alto\n-projetil: lento\n-Cadencia: lenta\n-area
+        de dano\n-pre\xE7o: 10 materiais"
       objectReference: {fileID: 0}
     - target: {fileID: 3291887198592929711, guid: a33d3ed8afd839a48ac679569ea21de0,
         type: 3}
@@ -8999,6 +9058,23 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3874415917471100552, guid: a33d3ed8afd839a48ac679569ea21de0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598845292999517071, guid: a33d3ed8afd839a48ac679569ea21de0,
+        type: 3}
+      propertyPath: m_text
+      value: "Anti-aereo triplo:\n-dano: medio\n-projetil perseguidor\n-Cadencia:
+        m\xE9dia\n- 3 projeteis\n-pre\xE7o: 10 materiais"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4605356793986294257, guid: a33d3ed8afd839a48ac679569ea21de0,
+        type: 3}
+      propertyPath: m_text
+      value: "Morteiro:\n-Dano: m\xE9dio\n-Projetil: lento\n-Cadencia: lenta\n\n-pre\xE7o:
+        10 materiais"
+      objectReference: {fileID: 0}
     - target: {fileID: 4708554882097815297, guid: a33d3ed8afd839a48ac679569ea21de0,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -9079,6 +9155,12 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 5997209937985216878, guid: a33d3ed8afd839a48ac679569ea21de0,
+        type: 3}
+      propertyPath: m_text
+      value: "Mina-terrestre:\n-dano: alto\n-projetil: est\xE1tico\n-Cadencia: lenta\n-explode
+        em contato\n-pre\xE7o: 10 materiais"
+      objectReference: {fileID: 0}
     - target: {fileID: 6245903108388385229, guid: a33d3ed8afd839a48ac679569ea21de0,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -9113,12 +9195,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6643128672074389002, guid: a33d3ed8afd839a48ac679569ea21de0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582002309442295638, guid: a33d3ed8afd839a48ac679569ea21de0,
+        type: 3}
+      propertyPath: m_text
+      value: "Sniper:\n-dano: Insano\n-projetil: rapido\n-Cadencia: lenta\n\n-pre\xE7o:
+        10 materiais"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582201969958777665, guid: a33d3ed8afd839a48ac679569ea21de0,
+        type: 3}
+      propertyPath: m_text
+      value: "Anti-Aereo:\n-dano: alto\n-projetil perseguidor\n-Cadencia: m\xE9dia\n\n-pre\xE7o:
+        10 materiais"
       objectReference: {fileID: 0}
     - target: {fileID: 8070726006198927840, guid: a33d3ed8afd839a48ac679569ea21de0,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 889390507}
+    - target: {fileID: 8308740484386192552, guid: a33d3ed8afd839a48ac679569ea21de0,
+        type: 3}
+      propertyPath: m_text
+      value: "Laser de gelo:\n-dano: alto\n-projetil: continuo\n-Cadencia: continuo\n-atrasa
+        inimigos\n-pre\xE7o: 10 materiais"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8526166499365468599, guid: a33d3ed8afd839a48ac679569ea21de0,
+        type: 3}
+      propertyPath: m_text
+      value: "Metralhadora:\n-dano: baixo\n-projetil: rapido\n-Cadencia: Insana\n\n-pre\xE7o:
+        XX materiais"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8709297287453300470, guid: a33d3ed8afd839a48ac679569ea21de0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8983901963735890579, guid: a33d3ed8afd839a48ac679569ea21de0,
         type: 3}
       propertyPath: m_Pivot.x
@@ -9218,6 +9334,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9011391386564054537, guid: a33d3ed8afd839a48ac679569ea21de0,
+        type: 3}
+      propertyPath: m_text
+      value: "Morteiro forte:\n-dano: alto\n-projetil: lento\n-Cadencia: lenta\n\n-pre\xE7o:
+        10 materiais"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
