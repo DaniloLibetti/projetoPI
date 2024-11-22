@@ -10,6 +10,8 @@ public class DroneLauncher : MonoBehaviour
     private float _launchate;
     [SerializeField]
     private Transform _target1, _target2;
+    [SerializeField]
+    private ParticleSystem _shootEffect;
 
     void Start()
     {
@@ -19,6 +21,7 @@ public class DroneLauncher : MonoBehaviour
 
     private void Launch()
     {
+        _shootEffect.Play();
         GameObject drone = Instantiate(_drone, new Vector3(transform.position.x, transform.position.y + 2, transform.position.z), Quaternion.identity);
         DroneBehaviour targets = drone.GetComponent<DroneBehaviour>();
         targets._launcher = this.GetComponent<DroneLauncher>();
