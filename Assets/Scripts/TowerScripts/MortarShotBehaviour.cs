@@ -18,6 +18,9 @@ public class MortarShotBehaviour : MonoBehaviour
     private bool _isMine;
     [SerializeField]
     private bool _isFire;
+    [SerializeField]
+    private ParticleSystem _hitGroundEffect;
+    
 
     private int _fireRoutine = 0;
 
@@ -25,6 +28,7 @@ public class MortarShotBehaviour : MonoBehaviour
     {
         if ((other.CompareTag("Ground") || other.CompareTag("GroundEnemy")) && _isFire == false && _isMine == false)
         {
+            _hitGroundEffect.Play();
             //_seeEnemies.enabled = true;
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, 8.55f);
             foreach (var hitCollider in hitColliders)
@@ -40,6 +44,7 @@ public class MortarShotBehaviour : MonoBehaviour
 
         else if((other.CompareTag("Ground") || other.CompareTag("GroundEnemy")) && _isFire == true)
         {
+            _hitGroundEffect.Play();
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, 8.55f);
             foreach (var hitCollider in hitColliders)
             {
@@ -58,6 +63,7 @@ public class MortarShotBehaviour : MonoBehaviour
 
         else if (other.CompareTag("Ground") && _isMine == true)
         {
+            _hitGroundEffect.Play();
             _shotRB.isKinematic = true;
             _shotRender.GetComponent<BoxCollider>().enabled = true;
         }

@@ -347,6 +347,7 @@ MonoBehaviour:
   _launchPos: {fileID: 8255379783402766579}
   _behaviour: {fileID: 6730392339488067422}
   _missles: []
+  _shootEffect: {fileID: 7424400139800145652}
 --- !u!114 &7112117432053877403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -619,6 +620,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec5ea203d9f025245bd50cba6677443a, type: 3}
+--- !u!198 &7424400139800145652 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3987019943360912564, guid: ec5ea203d9f025245bd50cba6677443a,
+    type: 3}
+  m_PrefabInstance: {fileID: 5790636351578255936}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9044346810232899864 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3305502031738288984, guid: ec5ea203d9f025245bd50cba6677443a,

@@ -17,6 +17,8 @@ public class AntiAirHead : MonoBehaviour
     private AntiAirBehaviour2 _behaviour;
     [SerializeField]
     private List<GameObject> _missles = new();
+    [SerializeField]
+    private ParticleSystem _shootEffect;
 
     private void Start()
     {
@@ -41,6 +43,7 @@ public class AntiAirHead : MonoBehaviour
 
     public void Shoot()
     {
+        _shootEffect.Play();
         GameObject missle = GetMissles();
         if (missle != null)
         {

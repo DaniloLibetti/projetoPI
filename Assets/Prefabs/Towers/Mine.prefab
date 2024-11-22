@@ -55,6 +55,7 @@ MonoBehaviour:
   _shotRB: {fileID: 5863446446773457324}
   _isMine: 1
   _isFire: 0
+  _hitGroundEffect: {fileID: 382502638024315648}
 --- !u!65 &8489564268302364549
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -235,6 +236,11 @@ PrefabInstance:
       propertyPath: looping
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1003795978264327118, guid: d3547cb9b7f75f040a6d38e2c531da7a,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4584492709133490701, guid: d3547cb9b7f75f040a6d38e2c531da7a,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -310,6 +316,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3547cb9b7f75f040a6d38e2c531da7a, type: 3}
+--- !u!198 &382502638024315648 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1003795978264327118, guid: d3547cb9b7f75f040a6d38e2c531da7a,
+    type: 3}
+  m_PrefabInstance: {fileID: 621741943403045070}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3981108216841566915 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4584492709133490701, guid: d3547cb9b7f75f040a6d38e2c531da7a,
