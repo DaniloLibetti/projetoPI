@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour
 {
     public Image healthBar;
+    [SerializeField]
+    private bool _isBase = false;
 
     [SerializeField]
     private GameObject _CollectableMaterial;
@@ -17,7 +19,11 @@ public class Health : MonoBehaviour
     public void ReceiveDamage(float amount)
     {
         _health -= amount;
-        healthBar.fillAmount = _health / 1000f;
+        if(_isBase)
+        {
+            healthBar.fillAmount = _health / 1000f;
+        }
+        
 
         
         if(_health <= 0 && transform.parent)
