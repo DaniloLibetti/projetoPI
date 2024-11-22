@@ -118,6 +118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c28421b59419d746bfee23478e02316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
+  _isBase: 0
   _CollectableMaterial: {fileID: 0}
   _health: 200
 --- !u!1 &1290261479781987485
@@ -269,7 +271,7 @@ GameObject:
   - component: {fileID: 1638931121109295380}
   - component: {fileID: 7763457966868000561}
   - component: {fileID: 960824644705769977}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: FireTurret
   m_TagString: Turret
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
@@ -715,11 +717,47 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 64698e92ef42d754cb33546dc36a59df,
+        type: 3}
+      propertyPath: m_TagString
+      value: Instantiation
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 64698e92ef42d754cb33546dc36a59df,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8666550114224587666}
   m_SourcePrefab: {fileID: 100100000, guid: 64698e92ef42d754cb33546dc36a59df, type: 3}
+--- !u!1 &5931137520385917408 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 64698e92ef42d754cb33546dc36a59df,
+    type: 3}
+  m_PrefabInstance: {fileID: 6813607550602525873}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &8666550114224587666
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5931137520385917408}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.39999995, y: 0.049970698, z: 0.39999995}
+  m_Center: {x: 0, y: 0.024985349, z: -0}
 --- !u!4 &6414377710107777882 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 64698e92ef42d754cb33546dc36a59df,

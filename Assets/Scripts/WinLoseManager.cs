@@ -44,7 +44,7 @@ public class WinLoseManager : MonoBehaviour
             _startStopTimer = false;
             StartCoroutine(YouLose());
         }
-        if(_shipMaterials >= 100)
+        if(_shipMaterials >= 1000)
         {
             _startStopTimer = false;
             StartCoroutine(YouWin());

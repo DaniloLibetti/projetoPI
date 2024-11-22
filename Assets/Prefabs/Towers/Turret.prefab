@@ -235,6 +235,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c28421b59419d746bfee23478e02316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
+  _isBase: 0
   _CollectableMaterial: {fileID: 0}
   _health: 200
 --- !u!114 &345616347277976943
@@ -269,7 +271,7 @@ GameObject:
   - component: {fileID: 164494484215611512}
   - component: {fileID: 6905206345739786692}
   - component: {fileID: 1279537609713068944}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: Turret
   m_TagString: Turret
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -312,7 +314,7 @@ MonoBehaviour:
   _shootDistance: {fileID: 6905206345739786692}
   _ignoredLayer:
     serializedVersion: 2
-    m_Bits: 72
+    m_Bits: 4168
   _turretPivot: {fileID: 3406987080132125888}
   _firePoint: {fileID: 1403785516650044850}
   _shootEffect: {fileID: 800908280759039251}
@@ -602,5 +604,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.40000007, y: 0.19, z: 0.39999998}
-  m_Center: {x: 0, y: 0.095, z: 0}
+  m_Size: {x: 0.40000007, y: 0.053450856, z: 0.39999998}
+  m_Center: {x: 0, y: 0.026725428, z: 0}

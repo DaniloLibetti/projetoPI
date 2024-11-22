@@ -244,6 +244,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c28421b59419d746bfee23478e02316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
+  _isBase: 0
   _CollectableMaterial: {fileID: 0}
   _health: 200
 --- !u!1001 &3284152126247706911
@@ -418,10 +420,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mortar_3B
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8849c1fd080828344a48828d50f3b8f1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Instantiation
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8849c1fd080828344a48828d50f3b8f1,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5939801352665444937}
   m_SourcePrefab: {fileID: 100100000, guid: 8849c1fd080828344a48828d50f3b8f1, type: 3}
 --- !u!4 &5785231137718182081 stripped
 Transform:
@@ -429,3 +440,30 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6324175842637629226}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6557968650170071675 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8849c1fd080828344a48828d50f3b8f1,
+    type: 3}
+  m_PrefabInstance: {fileID: 6324175842637629226}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &5939801352665444937
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6557968650170071675}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.3085963, y: 0.040341992, z: 0.30859625}
+  m_Center: {x: -0.0028117385, y: 0.020170996, z: -0.0016195773}

@@ -105,8 +105,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1.0763255, z: 1}
+  m_Center: {x: 0, y: 0.03816148, z: 0}
 --- !u!114 &7815394468915824633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,6 +119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c28421b59419d746bfee23478e02316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
+  _isBase: 0
   _CollectableMaterial: {fileID: 0}
   _health: 300
 --- !u!1001 &4770520218364244675
@@ -201,6 +203,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 972a8003118ae4541aa26babe7b20faa,
         type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 972a8003118ae4541aa26babe7b20faa,
+        type: 3}
       propertyPath: m_TagString
       value: Instantiation
       objectReference: {fileID: 0}
@@ -244,5 +251,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.57409793, y: 0.5137588, z: 0.16597034}
-  m_Center: {x: 0, y: 0.2568794, z: -0.00000011920929}
+  m_Size: {x: 0.5740979, y: 0.21522355, z: 0.16597034}
+  m_Center: {x: 3.1061972e-14, y: 0.107611775, z: -0.000000118029}

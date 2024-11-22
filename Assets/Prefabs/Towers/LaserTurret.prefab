@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2819294637383291698}
   - component: {fileID: 6571871821006209277}
   - component: {fileID: 4491181837612587629}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: LaserTurret
   m_TagString: Turret
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -198,6 +198,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c28421b59419d746bfee23478e02316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
+  _isBase: 0
   _CollectableMaterial: {fileID: 0}
   _health: 200
 --- !u!114 &6293935016287617411
@@ -435,11 +437,47 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turret_Laser_1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 34149f57d1e1994438917a70a84a0d63,
+        type: 3}
+      propertyPath: m_TagString
+      value: Instantiation
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 34149f57d1e1994438917a70a84a0d63,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1720855331951469397}
   m_SourcePrefab: {fileID: 100100000, guid: 34149f57d1e1994438917a70a84a0d63, type: 3}
+--- !u!1 &442375956868714567 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 34149f57d1e1994438917a70a84a0d63,
+    type: 3}
+  m_PrefabInstance: {fileID: 784412791495224598}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1720855331951469397
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 442375956868714567}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.40000004, y: 0.045091517, z: 0.39999998}
+  m_Center: {x: -0.00000001633004, y: 0.02254571, z: 0}
 --- !u!4 &966147715063155453 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 34149f57d1e1994438917a70a84a0d63,

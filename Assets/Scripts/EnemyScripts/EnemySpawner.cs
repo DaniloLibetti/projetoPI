@@ -17,8 +17,8 @@ public class EnemySpawner : MonoBehaviour
 
     private float[] _enemyHeight = {-3.88f, 5f};
     private int _leftRightSpawn = 250;
-    private float mintime = 1;
-    private float maxtime = 2;
+    private float mintime = 2;
+    private float maxtime = 3;
     private bool _changesides;
 
     // Primeira onda devera ser apenas um inimgo da direita, segunda um da direita e outro da esquerda
@@ -51,7 +51,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Spawn()
     {
-        for(int i = 0; i <= _enemyCount; i++)
+        for(int i = 0; i < _enemyCount; i++)
         {
             if(_changesides == true)
             {

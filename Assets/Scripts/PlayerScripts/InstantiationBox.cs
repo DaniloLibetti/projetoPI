@@ -9,6 +9,13 @@ public class InstantiationBox : MonoBehaviour
     [SerializeField]
     private TowerInstantiations _instantiationScript;
 
+    private void OnEnable()
+    {
+        _instantiationScript._canInstantiate = true;
+        Color color = new Color(0, 1, 0, .5f);
+        _mat.color = color;
+    }
+
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Instantiation"))

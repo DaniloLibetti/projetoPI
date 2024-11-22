@@ -27,6 +27,7 @@ public class EnemyBehaviour : MonoBehaviour
 
         _direction = transform.position - _basePos.position;
         _direction.Normalize();
+        transform.LookAt(_direction);
         Shoot();
     }
 
@@ -53,23 +54,24 @@ public class EnemyBehaviour : MonoBehaviour
     private void Shoot()
     {
 
-        Ray shootRay = new Ray(transform.position, Vector3.left);
-        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.left) * 2, Color.red, 2);
+        Ray shootRay = new Ray(transform.position, -_direction);
+        Debug.DrawRay(transform.position, -_direction * 2, Color.red, 2);
 
         if (Physics.Raycast(shootRay, out RaycastHit hitInfo, 2, _layerMask))
         {
             Health health = hitInfo.transform.gameObject.GetComponent<Health>();
-
             //if (health == null && (hitInfo.transform.position - transform.position).x <= 2)
             //{
             //    //_speed = -5;
             //}
-            if (health != null && (hitInfo.transform.position - transform.position).x <= 2)
+            if (hitInfo.transform.gameObject.layer == 6 || hitInfo.transform.gameObject.layer == 7 || hitInfo.transform.gameObject.layer == 11)
+            {
+                _speed = 0;
+            }
+            if (health != null && hitInfo.transform.gameObject.layer == 6)
             {
                 health.ReceiveDamage(_damage);
-                //_speed = 0;
             }
-
         }
         else
         {
@@ -79,5 +81,15 @@ public class EnemyBehaviour : MonoBehaviour
         Invoke("Shoot", .2f);
 
     }
+
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //        _speed = 0;
+    //}
+    //
+    //private void OnCollisionExit(Collision collision)
+    //{
+    //    _speed = -5;
+    //}
 
 }

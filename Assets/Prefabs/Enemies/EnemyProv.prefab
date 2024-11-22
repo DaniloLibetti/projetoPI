@@ -123,6 +123,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c28421b59419d746bfee23478e02316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
+  _isBase: 0
   _CollectableMaterial: {fileID: 3592609193582990277, guid: 79c9b6940558df34ab805ba073fd301f,
     type: 3}
   _health: 100
@@ -145,7 +147,7 @@ MonoBehaviour:
     type: 3}
   _layerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 192
   velocity: {x: 0, y: 0, z: 0}
   _rB: {fileID: -3366318051619017702}
 --- !u!54 &-3366318051619017702
@@ -216,7 +218,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 7dc06029e4046be4183b87609d6353ac,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7dc06029e4046be4183b87609d6353ac,
         type: 3}
@@ -226,7 +228,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 7dc06029e4046be4183b87609d6353ac,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7dc06029e4046be4183b87609d6353ac,
         type: 3}
@@ -241,7 +243,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 7dc06029e4046be4183b87609d6353ac,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7dc06029e4046be4183b87609d6353ac,
         type: 3}
