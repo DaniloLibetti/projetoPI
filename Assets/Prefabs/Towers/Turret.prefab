@@ -318,6 +318,7 @@ MonoBehaviour:
   _turretPivot: {fileID: 3406987080132125888}
   _firePoint: {fileID: 1403785516650044850}
   _shootEffect: {fileID: 800908280759039251}
+  _animator: {fileID: 5208555486910607349}
   _enemy: []
   _lockedEnemy: {fileID: 0}
 --- !u!65 &6905206345739786692

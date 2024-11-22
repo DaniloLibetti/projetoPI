@@ -24,11 +24,6 @@ public class TurretBehaviour : MonoBehaviour
     [SerializeField]
     private ParticleSystem _shootEffect;
 
-    [SerializeField]
-    private Animator _animator;
-    [SerializeField]
-    private bool _isShooting = false;
-
     private float _shootCooldown;
     private GameObject _activeTarget;
 
@@ -98,8 +93,7 @@ public class TurretBehaviour : MonoBehaviour
 
     private void Shoot()
     {
-        _shootEffect.Play();
-        _isShooting = true;
+        _shootEffect.Play(); 
 
         Ray shootRay = new Ray(_firePoint.position, _firePoint.forward);
         Debug.DrawRay(_firePoint.position, _firePoint.TransformDirection(Vector3.forward) * 10, Color.red, 2);

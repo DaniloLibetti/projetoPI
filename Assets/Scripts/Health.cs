@@ -12,6 +12,8 @@ public class Health : MonoBehaviour
 
     [SerializeField]
     private GameObject _CollectableMaterial;
+    [SerializeField]
+    private ParticleSystem _bloodEffect;
 
     public float _health = 100f;
 
@@ -23,8 +25,11 @@ public class Health : MonoBehaviour
         {
             healthBar.fillAmount = _health / 1000f;
         }
-        
 
+        if (!_isBase)
+        {
+            _bloodEffect.Play();
+        }
         
         if(_health <= 0 && transform.parent)
         {
