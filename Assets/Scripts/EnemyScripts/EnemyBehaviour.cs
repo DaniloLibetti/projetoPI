@@ -9,8 +9,7 @@ public class EnemyBehaviour : MonoBehaviour
     private float _damage;
     public float _startSpeed = -5f;
     public float _speed;
-    [SerializeField]
-    private Transform _basePos;
+    public Transform _basePos;
     [SerializeField]
     private LayerMask _layerMask;
     private Vector3 _direction;
@@ -18,17 +17,28 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField]
     private Rigidbody _rB;
 
+    public EnemySpawner _spawner;
 
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        _speed = _startSpeed;
+        
+    }
+
+    private void OnEnable()
+    {
+        _speed = -5;
 
         _direction = transform.position - _basePos.position;
         _direction.Normalize();
         transform.LookAt(_direction);
         Shoot();
+        
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
     }
 
     // Update is called once per frame
@@ -42,6 +52,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     private void FixedUpdate()
     {
+        _speed = -5;
         _rB.velocity = new Vector3(_direction.x * _speed, 0, 0);
     }
 
@@ -64,22 +75,28 @@ public class EnemyBehaviour : MonoBehaviour
             //{
             //    //_speed = -5;
             //}
-            if (hitInfo.transform.gameObject.layer == 6 || hitInfo.transform.gameObject.layer == 7 || hitInfo.transform.gameObject.layer == 11)
-            {
-                _speed = 0;
-            }
+            //if (hitInfo.transform.gameObject.layer == 6 || hitInfo.transform.gameObject.layer == 7 || hitInfo.transform.gameObject.layer == 11)
+            //{
+            //    //_speed = 0;
+            //}
             if (health != null && hitInfo.transform.gameObject.layer == 6)
             {
                 health.ReceiveDamage(_damage);
             }
-        }
-        else
-        {
-            _speed = -5;
+            //else if(hitInfo.transform == null)
+            //{
+            //    _speed = -5;
+            //}
         }
 
         Invoke("Shoot", .2f);
 
+    }
+
+    private void OnDisable()
+    {
+            _spawner._nextWave--;
+            _spawner.CanCall();
     }
 
     //private void OnCollisionEnter(Collision collision)

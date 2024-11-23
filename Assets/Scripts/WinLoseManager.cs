@@ -30,13 +30,13 @@ public class WinLoseManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_startStopTimer)
-        {
-        _timer += Time.deltaTime;
-        int minutes = Mathf.FloorToInt(_timer / 60.0f);
-        int seconds = Mathf.FloorToInt(_timer - minutes * 60);
-        _showTimer.text = "Tempo: " + string.Format("{0:00}:{1:00}", minutes, seconds);
-        }
+        //if (_startStopTimer)
+        //{
+        //    _timer += Time.deltaTime;
+        //    int minutes = Mathf.FloorToInt(_timer / 60.0f);
+        //    int seconds = Mathf.FloorToInt(_timer - minutes * 60);
+        //    _showTimer.text = "Tempo: " + string.Format("{0:00}:{1:00}", minutes, seconds);
+        //}
 
 
         if(_health._health <= .1f)
@@ -44,7 +44,7 @@ public class WinLoseManager : MonoBehaviour
             _startStopTimer = false;
             StartCoroutine(YouLose());
         }
-        if(_shipMaterials >= 1000)
+        if(_shipMaterials >= 100)
         {
             _startStopTimer = false;
             StartCoroutine(YouWin());

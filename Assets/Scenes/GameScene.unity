@@ -8163,8 +8163,12 @@ MonoBehaviour:
   - {fileID: 3418980292504013615, guid: 425643cb13a4b2641a132c2657bf1c67, type: 3}
   _ground: []
   _flying: []
-  _time: 1
-  _enemyCount: 10
+  _timer: 25
+  _enemyCount: 1
+  _showTimer: {fileID: 385590043}
+  _base: {fileID: 6141996080830185176}
+  _thisMotherFucker: {fileID: 2105074687}
+  _nextWave: 0
 --- !u!4 &2105074688
 Transform:
   m_ObjectHideFlags: 0
@@ -9482,7 +9486,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 1904299792}
   _isBase: 1
+  _isEnemy: 0
   _CollectableMaterial: {fileID: 0}
+  _bloodEffect: {fileID: 0}
   _health: 1000
 --- !u!1 &8920638698093059190 stripped
 GameObject:

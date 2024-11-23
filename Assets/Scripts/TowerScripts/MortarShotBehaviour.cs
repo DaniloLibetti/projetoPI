@@ -9,7 +9,7 @@ public class MortarShotBehaviour : MonoBehaviour
     [SerializeField]
     private float _damage;
     [SerializeField]
-    private GameObject _fireMortarParticle;
+    private ParticleSystem _fireMortarParticle;
     [SerializeField]
     private GameObject _shotRender;
     [SerializeField]
@@ -22,7 +22,7 @@ public class MortarShotBehaviour : MonoBehaviour
     private ParticleSystem _hitGroundEffect;
     
 
-    private int _fireRoutine = 0;
+    private float _fireRoutine = 0;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -39,7 +39,8 @@ public class MortarShotBehaviour : MonoBehaviour
                 }
                 //hitCollider.SendMessage("AddDamage");
             }
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
+            Destroy(this.gameObject, 2);
         }
 
         else if((other.CompareTag("Ground") || other.CompareTag("GroundEnemy")) && _isFire == true)
@@ -57,7 +58,7 @@ public class MortarShotBehaviour : MonoBehaviour
 
             FireDamage();
             _shotRender.SetActive(false);
-            _fireMortarParticle.SetActive(true);
+            _fireMortarParticle.Play();
             _shotRB.isKinematic = true;
         }
 
@@ -71,7 +72,7 @@ public class MortarShotBehaviour : MonoBehaviour
 
     private void FireDamage()
     {
-        if(_fireRoutine <= 3)
+        if(_fireRoutine <= 3.7f)
         {
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, 8.55f);
             foreach (var hitCollider in hitColliders)
@@ -82,13 +83,18 @@ public class MortarShotBehaviour : MonoBehaviour
                 }
                 //hitCollider.SendMessage("AddDamage");
             }
-
+            if(_fireRoutine >= 2.6f)
+            {
+                _fireMortarParticle.Stop();
+            }
+            _fireRoutine += .2f;
             Invoke("FireDamage", 3.7f);
 
         }
         else
         {
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
+            Destroy(this.gameObject);
         }
 
     }

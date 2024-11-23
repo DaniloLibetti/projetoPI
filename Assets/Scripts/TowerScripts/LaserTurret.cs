@@ -45,8 +45,18 @@ public class LaserTurret : MonoBehaviour
 
         if (_shootCooldown <= 0 && _lockedEnemy != null)
         {
-            _shootCooldown = _fireRate;
-            Shoot();
+            if (!_lockedEnemy.gameObject.activeInHierarchy)
+            {
+                _enemy.Remove(_lockedEnemy);
+                _lockedEnemy = null;
+                _shootCooldown = _fireRate;
+                SetTarget();
+            }
+            else
+            {
+                _shootCooldown = _fireRate;
+                Shoot();
+            }
         }
         if(_shootCooldown <= 0 && _lockedEnemy == null)
         {
@@ -72,6 +82,13 @@ public class LaserTurret : MonoBehaviour
     {
         if (_lockedEnemy == null || !_lockedEnemy.gameObject.activeSelf)
         {
+            for (int i = 0; i < _enemy.Count; i++)
+            {
+                if (_enemy[i] == null)
+                {
+                    _enemy.RemoveAt(i);
+                }
+            }
             foreach (Transform t in _enemy)
             {
                 if (t != null)
@@ -83,13 +100,6 @@ public class LaserTurret : MonoBehaviour
                         _minDist = dist;
 
                     }
-                }
-            }
-            for (int i = 0; i < _enemy.Count; i++)
-            {
-                if (_enemy[i] == null)
-                {
-                    _enemy.RemoveAt(i);
                 }
             }
         }

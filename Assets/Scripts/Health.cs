@@ -9,6 +9,8 @@ public class Health : MonoBehaviour
     public Image healthBar;
     [SerializeField]
     private bool _isBase = false;
+    [SerializeField]
+    private bool _isEnemy = false;
 
     [SerializeField]
     private GameObject _CollectableMaterial;
@@ -26,7 +28,7 @@ public class Health : MonoBehaviour
             healthBar.fillAmount = _health / 1000f;
         }
 
-        if (!_isBase)
+        if (_isEnemy)
         {
             _bloodEffect.Play();
         }

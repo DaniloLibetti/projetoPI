@@ -200,7 +200,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
   _isBase: 0
+  _isEnemy: 0
   _CollectableMaterial: {fileID: 0}
+  _bloodEffect: {fileID: 0}
   _health: 200
 --- !u!114 &6293935016287617411
 MonoBehaviour:
