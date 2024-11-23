@@ -22,6 +22,8 @@ public class IceLaserTurret : MonoBehaviour
     private ParticleSystem _laserHeadParticle;
     [SerializeField]
     private ParticleSystem _laserHitParticle;
+    [SerializeField]
+    private AudioSource _shootAudio;
 
 
     [SerializeField]
@@ -58,6 +60,7 @@ public class IceLaserTurret : MonoBehaviour
                     _lineRenderer.enabled = false;
                     _laserHitParticle.Stop();
                     _laserHeadParticle.Stop();
+                    _shootAudio.Stop();
                 }
             }
         
@@ -76,6 +79,7 @@ public class IceLaserTurret : MonoBehaviour
             _lineRenderer.enabled = true;
             _laserHitParticle.Play();
             _laserHeadParticle.Play();
+            _shootAudio.Play();
         }
 
 

@@ -20,6 +20,8 @@ public class LaserTurret : MonoBehaviour
     private Transform _firePoint;
     [SerializeField]
     private ParticleSystem _shootEffect;
+    [SerializeField]
+    private AudioSource _shootAudio;
 
 
     private float _shootCooldown;
@@ -122,6 +124,7 @@ public class LaserTurret : MonoBehaviour
     {
         if(_lockedEnemy != null && _lockedEnemy.gameObject.activeSelf)
         {
+            _shootAudio.Play();
             GameObject bullet = Instantiate(_laserBullet, _firePoint.position, _firePoint.rotation);
             bullet.GetComponent<Rigidbody>().velocity = _firePoint.forward * _bulletSpeed;
         }

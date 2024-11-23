@@ -23,6 +23,8 @@ public class TurretBehaviour : MonoBehaviour
     private Transform _firePoint;
     [SerializeField]
     private ParticleSystem _shootEffect;
+    [SerializeField]
+    private AudioSource _shootAudio;
 
     private float _shootCooldown;
     private GameObject _activeTarget;
@@ -93,7 +95,8 @@ public class TurretBehaviour : MonoBehaviour
 
     private void Shoot()
     {
-        _shootEffect.Play(); 
+        _shootEffect.Play();
+        _shootAudio.Play();
 
         Ray shootRay = new Ray(_firePoint.position, _firePoint.forward);
         Debug.DrawRay(_firePoint.position, _firePoint.TransformDirection(Vector3.forward) * 10, Color.red, 2);

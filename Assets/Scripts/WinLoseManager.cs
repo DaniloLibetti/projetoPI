@@ -53,14 +53,14 @@ public class WinLoseManager : MonoBehaviour
 
     IEnumerator YouLose()
     {
-        _winLoseText.text = "You Lose!";
+        _winLoseText.text = "Você perdeu!";
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene("StartScene");
     }
 
     IEnumerator YouWin()
     {
-        _winLoseText.text = "Your Win!";
+        _winLoseText.text = "Você ganhou!";
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene("StartScene");
     }
